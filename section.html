@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BangaloreStudy — Nursing Admissions 2025–26</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #DB1A1A;
+      --red-2: #f03333;
+      --red-dark: #a01212;
+      --red-pale: #FFF6F6;
+      --teal: #8CC7C4;
+      --teal-2: #a8d6d3;
+      --deep: #2C687B;
+      --deep-2: #1f4d5c;
+      --deep-3: #163a47;
+      --maroon: #6b0f0f;
+      --maroon-2: #8a1515;
+      --mist: #e8f0f2;
+      --mist-2: #d4e4e8;
+      --white: #ffffff;
+      --body: #2a4a57;
+      --muted: #5a8494;
+      --serif: "Inter Tight", sans-serif;
+      --sans: "Inter Tight", sans-serif;
+      --cond: "Inter Tight", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      font-family: "Inter Tight", sans-serif;
+      color: var(--body);
+      background: #f5f5f5;
+      overflow-x: hidden
+    }
+
+    /* ─── PROGRESS ─── */
+    #prog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--red);
+      z-index: 9999;
+      width: 0;
+      transition: width .1s
+    }
+
+    /* ══════════════════════════════════════
+           NAV — clean white bar matching screenshot
+        ══════════════════════════════════════ */
+    .nav-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 0;
+      background: #ffffff;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+      transition: box-shadow .3s;
+    }
+
+    .nav-wrap.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    }
+
+    .nav-pill {
+      background: transparent;
+      border-radius: 0;
+      padding: 0 48px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: none;
+      border: none;
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 0;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-brand img {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      font-family: var(--cond);
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #1a2e38;
+      text-decoration: none;
+      padding: 8px 20px;
+      font-weight: 700;
+      transition: color .2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal)
+    }
+
+    .nav-chevron {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      opacity: 0.55;
+    }
+
+    .nav-apply {
+      font-family: var(--cond);
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--maroon);
+      border: none;
+      padding: 13px 30px;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-apply:hover {
+      background: var(--red);
+      transform: translateY(-1px);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #1a2e38;
+      border-radius: 2px;
+      transition: all .3s
+    }
+
+    /* ══════════════════════════════════════
+           HERO SECTION — clean white layout
+        ══════════════════════════════════════ */
+    .hero-section {
+      padding: 72px 0 0;
+      background:
+        url('Media/ChatGPT Image Jun 3, 2026, 04_13_24 PM.png');
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+
+      min-height: 100vh;
+
+    }
+
+    /* Mobile image */
+    @media (max-width: 768px) {
+      .hero-section {
+        background:
+          linear-gradient(100deg,
+            rgba(255, 238, 238, 0.589),
+            rgba(0, 0, 0, 0)),
+          url('Media/ChatGPT Image Jun 3, 2026, 05_34_01 PM.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 65%;
+
+      }
+    }
+
+    .hero-section-inner {
+      flex: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-layout {
+      max-width: 1480px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 32px;
+      align-items: center;
+      flex: 1;
+      min-height: calc(100vh - 72px - 90px);
+    }
+
+    /* LEFT */
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px 0px 0px 0px;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(44, 104, 123, 0.09);
+      border: 1px solid rgba(44, 104, 123, 0.18);
+      border-radius: 100px;
+      padding: 7px 14px;
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .hero-badge-pill span {
+      font-family: var(--cond);
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--deep);
+      font-weight: 600;
+    }
+
+    .hero-title-new {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      font-weight: 800;
+      color: #0f2535;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      margin-bottom: 22px;
+    }
+
+    .hero-title-new em {
+      font-style: italic;
+      color: var(--maroon-2);
+      display: block;
+    }
+
+    .hero-sub-new {
+      font-family: var(--sans);
+      font-size: .95rem;
+      color: #5a7a88;
+      line-height: 1.75;
+      max-width: 440px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .hero-feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(44, 104, 123, 0.12);
+      border-radius: 12px;
+      padding: 11px 16px;
+      box-shadow: 0 2px 14px rgba(44, 104, 123, 0.09);
+    }
+
+    .hero-feature-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-feature-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: white;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .hero-feature-text {
+      font-family: var(--sans);
+      font-size: .78rem;
+      font-weight: 600;
+      color: #1a2e38;
+      line-height: 1.3;
+    }
+
+    /* Nurse image — positioned between left and right */
+    .hero-nurse-area {
+      position: absolute;
+      left: 0;
+      right: 508px;
+      top: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-nurse-area::before {
+      content: '';
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(140, 199, 196, 0.20) 0%, transparent 70%);
+    }
+
+    .hero-nurse-area img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 92%;
+      max-height: 580px;
+      width: auto;
+      object-fit: contain;
+      object-position: bottom center;
+    }
+
+    /* RIGHT form card */
+    .form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 32px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 48px rgba(44, 104, 123, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(44, 104, 123, 0.08);
+      overflow: hidden;
+      z-index: 3;
+      align-self: center;
+      margin: 40px 0;
+    }
+
+
+    .form-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .form-card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--maroon);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .form-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: white;
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .form-card-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--deep);
+      line-height: 1.1;
+      margin-bottom: 2px;
+      font-style: normal;
+    }
+
+    .form-card-sub {
+      font-family: var(--cond);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .f-group {
+      margin-bottom: 13px
+    }
+
+    .f-label {
+      font-family: var(--cond);
+      font-size: .63rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .f-input {
+      width: 100%;
+      background: var(--red-pale);
+      border: 1.5px solid rgba(219, 26, 26, 0.10);
+      color: var(--deep);
+      padding: 11px 14px;
+      font-family: var(--sans);
+      font-size: .88rem;
+      font-weight: 400;
+      outline: none;
+      transition: border-color .25s;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: 4px;
+    }
+
+    .f-input::placeholder {
+      color: #a0a0a0
+    }
+
+    .f-input:focus {
+      border-color: var(--deep);
+      background: white
+    }
+
+    .f-select-wrap {
+      position: relative
+    }
+
+    .f-select-wrap::after {
+      content: '❯';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      color: var(--deep);
+      font-size: .75rem;
+      pointer-events: none;
+    }
+
+    .f-input option {
+      background: white;
+      color: var(--deep)
+    }
+
+    .f-submit {
+      width: 100%;
+      background: var(--maroon);
+      color: var(--white);
+      border: none;
+      padding: 15px;
+      font-family: var(--cond);
+      font-size: .85rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+      border-radius: 4px;
+    }
+
+    .f-submit:hover {
+      background: var(--red);
+      transform: translateY(-1px)
+    }
+
+    /* ══════════════════════════════════════
+           STATS BAR — clean white with icons
+        ══════════════════════════════════════ */
+    .stats-bar {
+      background: #ffffff;
+      padding: 0 48px;
+      border-top: 1px solid rgba(44, 104, 123, 0.10);
+      box-shadow: 0 4px 20px rgba(44, 104, 123, 0.06);
+      flex-shrink: 0;
+    }
+
+    .stats-inner {
+      max-width: 1480px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 22px 28px;
+      border-right: 1px solid rgba(44, 104, 123, 0.10);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .stat-item:last-child {
+      border-right: none
+    }
+
+    .stat-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(44, 104, 123, 0.08);
+    }
+
+    .stat-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--deep);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .stat-val {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #0f2535;
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .stat-val em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .stat-label {
+      font-family: var(--cond);
+      font-size: .64rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    /* ══════════════════════════════════════
+           MARQUEE
+        ══════════════════════════════════════ */
+    .marquee-wrap {
+      background: var(--red);
+      overflow: hidden;
+      padding: 13px 0
+    }
+
+    .marquee-track {
+      display: flex;
+      animation: marquee 30s linear infinite;
+      white-space: nowrap
+    }
+
+    .marquee-track span {
+      font-family: var(--cond);
+      font-size: .75rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      padding: 0 36px;
+      font-weight: 400
+    }
+
+    .marquee-track em {
+      color: rgba(255, 255, 255, 0.35);
+      padding: 0 6px;
+      font-style: normal
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* ══════════════════════════════════════
+           SHARED SECTION STYLES
+        ══════════════════════════════════════ */
+    .sec-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .intro {
+      background: var(--red-pale);
+      padding: 100px 20px
+    }
+
+    .intro-grid-layout {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .intro-label {
+      font-family: var(--cond);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .intro-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--red)
+    }
+
+    .intro-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    .intro-heading em {
+      font-style: italic;
+      color: var(--red)
+    }
+
+    .intro-body {
+      font-size: 1rem;
+      color: var(--deep);
+      line-height: 1.85;
+      font-weight: 400;
+      margin-top: 24px;
+      max-width: 520px
+    }
+
+    .btn-primary {
+      font-family: var(--cond);
+      font-size: .8rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--red);
+      border: none;
+      padding: 13px 32px;
+      cursor: pointer;
+      transition: all .3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border-radius: 4px;
+      margin-top: 32px
+    }
+
+    .btn-primary:hover {
+      background: var(--red-2);
+      transform: translateY(-1px)
+    }
+
+    .intro-cells {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      background: var(--mist-2)
+    }
+
+    .intro-cell {
+      background: white;
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+      transition: background .3s
+    }
+
+    .intro-cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width .4s
+    }
+
+    .intro-cell:hover::after {
+      width: 100%
+    }
+
+    .intro-cell:hover {
+      background: var(--red-pale)
+    }
+
+    .intro-cell-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: block
+    }
+
+    .intro-cell-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--deep)
+    }
+
+    .intro-cell-meta {
+      font-family: var(--cond);
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: 5px;
+      font-weight: 300
+    }
+
+    /* UG */
+    .ug {
+      background: var(--deep-2);
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .ug::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(219, 26, 26, 0.1), transparent 70%)
+    }
+
+    .sec-label {
+      font-family: var(--cond);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .sec-label::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--teal)
+    }
+
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      color: white;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 14px
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--teal)
+    }
+
+    .sec-desc {
+      font-size: 1rem;
+      color: var(--mist-2);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 50px
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px
+    }
+
+    .course-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--deep-3);
+      transition: all .4s
+    }
+
+    .course-img {
+      aspect-ratio: 3/3;
+      overflow: hidden;
+      position: relative
+    }
+
+    .course-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.25, .46, .45, .94);
+      filter: brightness(.9) contrast(1.1)
+    }
+
+    .course-card:hover .course-img img {
+      transform: scale(1.07)
+    }
+
+    .course-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgb(22, 58, 71) 0%, transparent 90%)
+    }
+
+    .course-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 26px 22px;
+      z-index: 2
+    }
+
+    .course-tag {
+      font-family: var(--cond);
+      font-size: .63rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 400;
+      border: 1px solid rgba(140, 199, 196, 0.45);
+      padding: 3px 10px;
+      display: inline-block;
+      margin-bottom: 8px
+    }
+
+    .course-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: -.02em;
+      line-height: 1.15
+    }
+
+    .course-meta {
+      font-family: var(--cond);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.668);
+      margin-top: 6px;
+      font-weight: 600
+    }
+
+    .course-elig {
+      font-size: .88rem;
+      color: rgb(255, 255, 255);
+      font-weight: 300;
+      margin-top: 8px;
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease
+    }
+
+    .course-card:hover .course-elig {
+      max-height: 80px
+    }
+
+    .course-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--cond);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-top: 12px;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all .3s
+    }
+
+    .course-card:hover .course-cta {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* PG */
+    .pg {
+      background: var(--mist);
+      padding: 100px 20px
+    }
+
+    .pg-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-bottom: 60px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .pg-new-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: var(--mist-2);
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .pg-new-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--deep-3);
+      aspect-ratio: 3/2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      transition: all .35s
+    }
+
+    .pg-new-card-bg {
+      position: absolute;
+      inset: 0;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: transform .7s cubic-bezier(.25, .46, .45, .94);
+      filter: brightness(.85) saturate(1.1);
+      opacity: .9
+    }
+
+    .pg-new-card:hover .pg-new-card-bg {
+      transform: scale(1.06)
+    }
+
+    .pg-new-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgb(22, 58, 71) 0%, rgba(22, 58, 71, 0.787) 25%, transparent 100%);
+      z-index: 1
+    }
+
+    .pg-new-card-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 20px 22px 24px
+    }
+
+    .pg-new-num {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1;
+      font-style: italic
+    }
+
+    .pg-new-tag {
+      font-family: var(--cond);
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid rgba(140, 199, 196, .5);
+      padding: 3px 10px;
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 400
+    }
+
+    .pg-new-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: .03em;
+      line-height: 1.2;
+      margin-bottom: 4px
+    }
+
+    .pg-new-meta {
+      font-family: var(--cond);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .65);
+      font-weight: 600
+    }
+
+    .pg-new-elig {
+      font-size: .92rem;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 400;
+      line-height: 1.55;
+      margin-top: 6px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease
+    }
+
+    .pg-new-card:hover .pg-new-elig {
+      max-height: 60px
+    }
+
+    .pg-new-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--cond);
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-top: 10px;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all .3s
+    }
+
+    .pg-new-card:hover .pg-new-cta {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media (max-width: 768px) {
+
+      .pg-new-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+        background: transparent;
+      }
+
+      .pg-new-card {
+        aspect-ratio: auto;
+        min-height: 280px;
+      }
+
+      .pg-new-card:hover .pg-new-elig {
+        max-height: 60px;
+      }
+
+      .pg-new-cta {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ADMISSIONS */
+    .adm {
+      background: var(--deep-3);
+      padding: 100px 20px
+    }
+
+    .adm-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 50px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .adm-table-wrap {
+      border: 1px solid rgba(140, 199, 196, 0.12);
+      overflow: hidden;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .tbl {
+      width: 100%;
+      border-collapse: collapse
+    }
+
+    .tbl thead {
+      background: rgba(255, 255, 255, 0.04)
+    }
+
+    .tbl thead th {
+      font-family: var(--cond);
+      font-size: .66rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      padding: 16px 26px;
+      text-align: left;
+      font-weight: 400;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+    }
+
+    .tbl tbody tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: background .2s
+    }
+
+    .tbl tbody tr:hover {
+      background: rgba(140, 199, 196, 0.05)
+    }
+
+    .tbl tbody tr:last-child {
+      border-bottom: none
+    }
+
+    .tbl td {
+      padding: 18px 26px;
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 300
+    }
+
+    .tbl td:first-child {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: white
+    }
+
+    .badge-y {
+      font-family: var(--cond);
+      font-size: .63rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--teal-2);
+      border: 1px solid rgba(140, 199, 196, 0.4);
+      padding: 3px 11px;
+      font-weight: 400
+    }
+
+    .badge-n {
+      font-family: var(--cond);
+      font-size: .63rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #f08080;
+      border: 1px solid rgba(219, 26, 26, 0.35);
+      padding: 3px 11px;
+      font-weight: 400
+    }
+
+    .adm-cta {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .adm-cta-l {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 44px 44px
+    }
+
+    .adm-cta-r {
+      background: var(--red);
+      padding: 44px 44px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .adm-cta-r::before {
+      content: '';
+      position: absolute;
+      right: -50px;
+      top: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07)
+    }
+
+    .adm-cta-heading {
+      font-family: var(--serif);
+      font-size: 1.85rem;
+      font-weight: 300;
+      color: white;
+      letter-spacing: -.02em;
+      line-height: 1.2;
+      font-style: italic
+    }
+
+    .adm-cta-body {
+      font-size: .86rem;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-top: 12px
+    }
+
+    .adm-cta-r .adm-cta-body {
+      color: rgba(255, 255, 255, 0.75)
+    }
+
+    .btn-white {
+      font-family: var(--cond);
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--red);
+      background: white;
+      border: none;
+      padding: 12px 28px;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 24px;
+      border-radius: 4px
+    }
+
+    .btn-white:hover {
+      background: var(--red-pale)
+    }
+
+    /* COLLEGES */
+    .colleges {
+      background: var(--red-pale);
+      padding: 100px 20px
+    }
+
+    .colleges-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 50px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .colleges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      background: var(--mist-2);
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .college-card {
+      background: white;
+      padding: 26px 22px;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .college-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--red);
+      transition: width .4s
+    }
+
+    .college-card:hover::after {
+      width: 100%
+    }
+
+    .college-card:hover {
+      background: var(--red-pale)
+    }
+
+    .college-idx {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--mist-2);
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      line-height: 1
+    }
+
+    .college-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--deep);
+      line-height: 1.35
+    }
+
+    .college-loc {
+      font-family: var(--cond);
+      font-size: .65rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 9px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    .college-est {
+      font-family: var(--cond);
+      font-size: .63rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 5px;
+      font-weight: 600
+    }
+
+    .college-apply {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--cond);
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 14px;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: all .3s
+    }
+
+    .college-card:hover .college-apply {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* WHY */
+    .why {
+      background: var(--deep-2);
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .why-sticky {
+      position: sticky;
+      top: 110px
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      background: rgba(255, 255, 255, 0.06)
+    }
+
+    .why-card {
+      background: var(--deep-3);
+      padding: 30px 26px;
+      transition: all .3s;
+      border-left: 2px solid transparent
+    }
+
+    .why-card:hover {
+      background: var(--deep);
+      border-left-color: var(--teal)
+    }
+
+    .why-num {
+      font-family: var(--serif);
+      font-size: .95rem;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 14px;
+      font-weight: 300
+    }
+
+    .why-ct {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 7px
+    }
+
+    .why-cd {
+      font-size: .83rem;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .why-cta-strip {
+      background: var(--red);
+      padding: 36px 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: center;
+      margin-top: 50px
+    }
+
+    .why-cta-text {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: white;
+      letter-spacing: -.02em;
+      font-style: italic;
+      line-height: 1.2
+    }
+
+    .btn-dark {
+      font-family: var(--cond);
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      background: var(--deep-3);
+      border: none;
+      padding: 12px 28px;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+      border-radius: 4px
+    }
+
+    .btn-dark:hover {
+      background: var(--deep-2)
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--red-pale);
+      padding: 100px 20px
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 80px;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .faq-sticky {
+      position: sticky;
+      top: 110px
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      background: var(--mist-2)
+    }
+
+    .faq-item {
+      background: white;
+      overflow: hidden
+    }
+
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 26px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+      transition: background .2s
+    }
+
+    .faq-btn:hover {
+      background: var(--red-pale)
+    }
+
+    .faq-item.open .faq-btn {
+      background: var(--teal-2)
+    }
+
+    .faq-q {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--deep);
+      line-height: 1.35
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(44, 104, 123, 0.2)
+    }
+
+    .faq-icon svg {
+      width: 11px;
+      height: 11px;
+      fill: none;
+      stroke: var(--red);
+      stroke-width: 2;
+      transition: transform .35s
+    }
+
+    .faq-item.open .faq-icon svg {
+      transform: rotate(45deg)
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--red);
+      border-color: var(--red)
+    }
+
+    .faq-item.open .faq-icon svg {
+      stroke: white
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s ease
+    }
+
+    .faq-body-inner {
+      padding: 4px 26px 22px;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 500
+    }
+
+    .faq-item.open .faq-body {
+      max-height: 200px
+    }
+
+    /* FINAL CTA */
+    .final {
+      background: linear-gradient(to right, rgba(180, 15, 15, 0) 0%, #ffffff00 50%, rgba(180, 15, 15, 0) 100%), url('Media/ChatGPT Image Jun 3, 2026, 03_51_32 PM.png') center/cover no-repeat;
+      padding: 90px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(219, 26, 26, 0.14), transparent 65%)
+    }
+
+    .final-kicker {
+      font-family: var(--cond);
+      font-size: .7rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--maroon-2);
+      margin-bottom: 22px;
+      font-weight: 400
+    }
+
+    .final-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 600;
+      color: var(--red-dark);
+      letter-spacing: -.03em;
+      line-height: .95
+    }
+
+    .final-title em {
+      font-style: italic;
+      color: var(--teal)
+    }
+
+    .final-sub {
+      font-size: .92rem;
+      color: var(--deep-3);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 460px;
+      margin: 24px auto 44px
+    }
+
+    .final-actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center
+    }
+
+    .final-divider {
+      width: 1px;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 50px auto 0
+    }
+
+    .btn-hero-ghost-cta {
+      font-family: var(--cond);
+      font-size: .8rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--deep-3);
+      background: transparent;
+      border: 2px solid rgba(102, 148, 152, 0.149);
+      padding: 13px 26px;
+      cursor: pointer;
+      transition: all .3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 4px
+    }
+
+    .btn-hero-ghost-cta:hover {
+      border-color: black;
+      color: var(--deep-3)
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--deep-3);
+      padding: 56px 20px 32px;
+      border-top: 1px solid rgba(140, 199, 196, 0.08)
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(140, 199, 196, 0.07);
+      margin-bottom: 32px
+    }
+
+    .footer-brand {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: white
+    }
+
+    .footer-brand em {
+      font-style: italic;
+      color: var(--teal)
+    }
+
+    .footer-tagline {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.845);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-top: 9px;
+      max-width: 530px
+    }
+
+    .footer-col-title {
+      font-family: var(--cond);
+      font-size: 1.1rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.928);
+      margin-bottom: 14px;
+      font-weight: 800
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px
+    }
+
+    .footer-links a {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.712);
+      text-decoration: none;
+      transition: color .2s;
+      font-weight: 500
+    }
+
+    .footer-links a:hover {
+      color: white
+    }
+
+    .footer-contacts {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px
+    }
+
+    .footer-contacts a {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.767);
+      text-decoration: none;
+      transition: color .2s;
+      font-weight: 400
+    }
+
+    .footer-contacts a:hover {
+      color: var(--teal)
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1320px;
+      margin: 0 auto
+    }
+
+    .footer-copy {
+      font-family: var(--cond);
+      font-size: .65rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.18);
+      font-weight: 300
+    }
+
+    .nav-brand.footer-brand-logo img {
+      height: 48px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px
+    }
+
+    .social-link {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(140, 199, 196, 0.713);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all .25s;
+      border-radius: 4px
+    }
+
+    .social-link svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.852);
+      stroke-width: 1.8;
+      transition: stroke .25s
+    }
+
+    .social-link:hover {
+      border-color: var(--red);
+      background: rgba(219, 26, 26, 0.12)
+    }
+
+    .social-link:hover svg {
+      stroke: var(--red)
+    }
+
+    /* REVEAL */
+    .r {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .r.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .r1 {
+      transition-delay: .1s
+    }
+
+    .r2 {
+      transition-delay: .2s
+    }
+
+    .r3 {
+      transition-delay: .3s
+    }
+
+    .r4 {
+      transition-delay: .4s
+    }
+
+    .arrow-svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--maroon);
+      z-index: 800;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px
+    }
+
+    .mobile-menu.open {
+      display: flex
+    }
+
+    .mobile-menu a {
+      font-family: var(--cond);
+      font-size: 1.4rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s
+    }
+
+    .mobile-menu a:hover {
+      color: var(--teal)
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 8px
+    }
+
+    /* ══════════════════════════════════════
+           RESPONSIVE
+        ══════════════════════════════════════ */
+    @media(max-width:1100px) {
+      .nav-pill {
+        padding: 0 24px;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 0;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 50px 0 280px;
+      }
+
+      .hero-nurse-area {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 80px;
+        height: 260px;
+      }
+
+      .hero-nurse-area img {
+        position: relative;
+        height: 260px;
+        right: auto;
+        bottom: auto;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .hero-section {
+        min-height: auto;
+      }
+
+      .form-card {
+        margin: 0 0 32px;
+      }
+
+      .stats-bar {
+        padding: 0 24px;
+      }
+
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3) {
+        border-top: 1px solid rgba(44, 104, 123, 0.10);
+      }
+
+      .stat-item:nth-child(4) {
+        border-top: 1px solid rgba(44, 104, 123, 0.10);
+        border-right: none;
+      }
+
+      .intro-grid-layout,
+      .pg-intro,
+      .adm-top,
+      .colleges-head,
+      .why-layout,
+      .faq-layout {
+        grid-template-columns: 1fr
+      }
+
+      .courses-grid,
+      .colleges-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .pg-new-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .why-sticky,
+      .faq-sticky {
+        position: relative;
+        top: auto
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .adm-cta {
+        grid-template-columns: 1fr
+      }
+
+      .why-cta-strip {
+        grid-template-columns: 1fr
+      }
+
+      .final-actions {
+        flex-direction: column
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none
+      }
+
+      .nav-hamburger {
+        display: flex
+      }
+
+      .nav-pill {
+        padding: 0 18px;
+        height: 64px;
+      }
+
+      .hero-layout {
+        padding: 0 18px;
+      }
+
+      .hero-left {
+        padding: 40px 0 240px;
+      }
+
+      .hero-nurse-area {
+        height: 220px;
+        bottom: 70px;
+      }
+
+      .hero-nurse-area img {
+        height: 220px;
+      }
+
+      .hero-title-new {
+        font-size: clamp(2.4rem, 8vw, 3.5rem);
+      }
+
+      .hero-features {
+        gap: 8px;
+      }
+
+      .hero-feature-badge {
+        padding: 10px 14px;
+      }
+
+      .stats-bar {
+        padding: 0 18px;
+      }
+
+      .stat-item {
+        padding: 18px 14px;
+        gap: 10px;
+      }
+
+      .stat-val {
+        font-size: 1.5rem;
+      }
+
+      .form-card {
+        padding: 28px 22px;
+      }
+
+      .courses-grid,
+      .pg-grid,
+      .colleges-grid,
+      .why-grid,
+      .intro-cells {
+        grid-template-columns: 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr
+      }
+
+      .adm-cta-l,
+      .adm-cta-r {
+        padding: 32px 28px
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero-left {
+        padding: 36px 0 40px;
+
+      }
+
+      .hero-badge-dot {
+        color: white !important;
+
+      }
+
+
+      .hero-badge-pill span {
+        font-family: var(--cond);
+        font-size: .7rem;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        color: var(--deep-3);
+        font-weight: 700;
+      
+      }
+
+      .hero-sub-new {
+        color: rgb(31, 31, 31);
+        font-weight: 600;
+        max-width: 200px !important;
+      }
+
+      .hero-btn-secondary {
+        color: white !important;
+      }
+
+      .hero-nurse-area {
+        height: 190px;
+        bottom: 60px;
+      }
+
+      .hero-nurse-area img {
+        height: 190px;
+      }
+
+      .hero-features {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .hero-feature-badge {
+        width: 100%;
+      }
+
+      .stat-icon {
+        width: 34px;
+        height: 34px;
+      }
+
+      .stat-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .pg-new-elig {
+        font-size: 0.8rem;
+      }
+
+      .sec-wrap {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="prog"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+    <a href="#courses" onclick="closeMobileMenu()">Courses</a>
+    <a href="#admissions" onclick="closeMobileMenu()">Admissions</a>
+    <a href="#colleges" onclick="closeMobileMenu()">Colleges</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQs</a>
+    <a href="#lead-form" onclick="closeMobileMenu()" style="color:var(--teal);font-weight:700">Apply Now</a>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <div class="nav-wrap" id="navbar">
+    <div class="nav-pill">
+      <a href="#" class="nav-brand">
+        <img src="Media/BangaloreStudy_WLogo.svg" alt="BangaloreStudy">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#courses">Courses <span class="nav-chevron"></span></a></li>
+        <li><a href="#admissions">Admissions <span class="nav-chevron"></span></a></li>
+        <li><a href="#colleges">Colleges</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+      <a href="#lead-form" class="nav-apply">Apply Now &nbsp;→</a>
+      <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero-section" id="home">
+    <div class="hero-section-inner">
+      <div class="hero-layout">
+
+        <!-- LEFT: content -->
+        <div class="hero-left">
+          <div class="hero-badge-pill">
+            <div class="hero-badge-dot"></div>
+            <span>Nursing Admissions 2026–27</span>
+          </div>
+          <h1 class="hero-title-new">
+            Build a Future
+            <em>of Care &amp;</em>
+            Excellence.
+          </h1>
+          <p class="hero-sub-new">Secure a seat at Bangalore's finest nursing colleges. Expert, end-to-end guidance
+            through every stage of your 2025–26 admission — from eligibility to enrolment.</p>
+          <div class="hero-actions">
+
+            <a href="#" class="hero-btn-primary">
+              Secure Your Seat
+              <span>→</span>
+            </a>
+
+            <a href="tel:18001208696" class="hero-btn-secondary">
+              ☎ Call Free — 1800 120 8696
+            </a>
+
+          </div>
+          <style>
+            .hero-actions {
+              display: flex;
+              align-items: center;
+              gap: 18px;
+              flex-wrap: wrap;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 12px;
+              padding: 15px 18px;
+              border-radius: 8px;
+              text-decoration: none;
+              font-size: 14px;
+              font-weight: 700;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              transition: all .3s ease;
+            }
+
+            /* Red Button */
+            .hero-btn-primary {
+              background: #ed1616;
+              color: #fff;
+              border: 2px solid #ed1616;
+            }
+
+            .hero-btn-primary:hover {
+              background: #c90f0f;
+              border-color: #c90f0f;
+              transform: translateY(-2px);
+            }
+
+            /* Transparent Button */
+            .hero-btn-secondary {
+              background: transparent;
+              color: #003a4b;
+              border: 1px solid rgba(44, 104, 123, .15);
+              backdrop-filter: blur(10px);
+            }
+
+            .hero-btn-secondary:hover {
+              border-color: #2C687B;
+              background: rgba(255, 255, 255, .4);
+              transform: translateY(-1px);
+            }
+
+            @media (max-width:768px) {
+
+              .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+              }
+
+              .hero-btn-primary,
+              .hero-btn-secondary {
+                width: 100%;
+              }
+            }
+          </style>
+          <!-- <div class="hero-features">
+            <div class="hero-feature-badge">
+              <div class="hero-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h2l2 2 3-6 3 8 2-4h6" />
+                </svg>
+              </div>
+              <div class="hero-feature-text">Top Nursing<br>Colleges</div>
+            </div>
+            <div class="hero-feature-badge">
+              <div class="hero-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <div class="hero-feature-text">Expert<br>Guidance</div>
+            </div>
+            <div class="hero-feature-badge">
+              <div class="hero-feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </div>
+              <div class="hero-feature-text">Smooth Admission<br>Process</div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- Nurse image sits here — user will add their image -->
+        <div class="hero-nurse-area">
+          <div class="hero-nurse-area::before"></div>
+          <!-- Replace src with your nurse image path e.g. Media/nurse.webp -->
+          <img src="Media/Banner_nurse.webp" alt="Nurse" onerror="this.style.display='none'">
+        </div>
+
+        <!-- RIGHT: form card -->
+        <div class="form-card" id="lead-form">
+          <div class="form-card-header">
+            <div class="form-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <div class="form-card-title">Start Your Application</div>
+              <div class="form-card-sub">Personalised Guidance · 2025–26 Intake</div>
+            </div>
+          </div>
+          <form id="appForm" onsubmit="submitForm(event)">
+            <div class="f-group">
+              <label class="f-label">Full Name</label>
+              <input class="f-input" type="text" placeholder="Your full name" required>
+            </div>
+            <div class="f-group">
+              <label class="f-label">Phone Number</label>
+              <input class="f-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+            <div class="f-group">
+              <label class="f-label">Email Address</label>
+              <input class="f-input" type="email" placeholder="your@email.com">
+            </div>
+            <div class="f-group">
+              <label class="f-label">Interested Course</label>
+              <div class="f-select-wrap">
+                <select class="f-input" required>
+                  <option value="" disabled selected>B.Sc Nursing</option>
+                  <option>GNM</option>
+                  <option>B.Sc Nursing</option>
+                  <option>P.B.B.Sc Nursing</option>
+                  <option>M.Sc Nursing</option>
+                </select>
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label">Interested Specializations</label>
+              <div class="f-select-wrap">
+                <select class="f-input" required>
+                  <option value="" disabled selected>B.Sc Nursing</option>
+                  <option>GNM</option>
+                  <option>B.Sc Nursing</option>
+                  <option>P.B.B.Sc Nursing</option>
+                  <option>M.Sc Nursing</option>
+                </select>
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label">State</label>
+              <div class="f-select-wrap">
+                <select class="f-input" required>
+                  <option value="" disabled selected>Select your state</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Arunachal Pradesh</option>
+                  <option>Assam</option>
+                  <option>Bihar</option>
+                  <option>Chhattisgarh</option>
+                  <option>Goa</option>
+                  <option>Gujarat</option>
+                  <option>Haryana</option>
+                  <option>Himachal Pradesh</option>
+                  <option>Jammu &amp; Kashmir</option>
+                  <option>Jharkhand</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Madhya Pradesh</option>
+                  <option>Maharashtra</option>
+                  <option>Manipur</option>
+                  <option>Meghalaya</option>
+                  <option>Mizoram</option>
+                  <option>Nagaland</option>
+                  <option>Odisha</option>
+                  <option>Punjab</option>
+                  <option>Rajasthan</option>
+                  <option>Sikkim</option>
+                  <option>Tamil Nadu</option>
+                  <option>Telangana</option>
+                  <option>Tripura</option>
+                  <option>Uttarakhand</option>
+                  <option>Uttar Pradesh</option>
+                  <option>West Bengal</option>
+                  <option>Delhi</option>
+                  <option>Chandigarh</option>
+                  <option>Puducherry</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="f-submit" id="formBtn">
+              Submit Application &nbsp;→
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STATS BAR — inside hero section at bottom -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div class="stat-text">
+            <div class="stat-val">10,000<em>+</em></div>
+            <div class="stat-label">Trusted by Students</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <div class="stat-text">
+            <div class="stat-val">50<em>+</em></div>
+            <div class="stat-label">Top Nursing Colleges</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <div class="stat-text">
+            <div class="stat-val">95<em>%</em></div>
+            <div class="stat-label">Admission Success Rate</div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="stat-text">
+            <div class="stat-val">24<em>/7</em></div>
+            <div class="stat-label">Expert Counselling Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>GNM Nursing <em>—</em></span><span>B.Sc Nursing <em>—</em></span>
+      <span>P.B.B.Sc Nursing <em>—</em></span><span>M.Sc Nursing <em>—</em></span>
+      <span>Top Colleges in Bangalore <em>—</em></span><span>Expert Admission Guidance <em>—</em></span>
+      <span>Admissions Open 2025–26 <em>—</em></span>
+      <span>GNM Nursing <em>—</em></span><span>B.Sc Nursing <em>—</em></span>
+      <span>P.B.B.Sc Nursing <em>—</em></span><span>M.Sc Nursing <em>—</em></span>
+      <span>Top Colleges in Bangalore <em>—</em></span><span>Expert Admission Guidance <em>—</em></span>
+      <span>Admissions Open 2025–26 <em>—</em></span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro" id="courses">
+    <div class="intro-grid-layout">
+      <div>
+        <div class="intro-label r">Nursing Programs</div>
+        <h2 class="intro-heading r r1">Why <em>Us?</em></h2>
+        <p class="intro-body r r2">BangaloreStudy is committed to guiding students through a seamless and result-driven
+          nursing admission journey in Bangalore.</p>
+        <a href="#ug" class="btn-primary r r3">View All Programs <svg class="arrow-svg" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+          </svg></a>
+      </div>
+      <div class="intro-cells r r2">
+        <div class="intro-cell"><span class="intro-cell-icon">🎓</span>
+          <div class="intro-cell-name">Expert Academic Counselling</div>
+          <div class="intro-cell-meta">Get personalized guidance from experienced admission experts.</div>
+        </div>
+        <div class="intro-cell"><span class="intro-cell-icon">🏥</span>
+          <div class="intro-cell-name">Tailored Admission Assistance</div>
+          <div class="intro-cell-meta">Receive admission support based on your academic profile and career goals.</div>
+        </div>
+        <div class="intro-cell"><span class="intro-cell-icon">📋</span>
+          <div class="intro-cell-name">Application Process Support</div>
+          <div class="intro-cell-meta">End-to-end assistance with applications, documentation and submissions.</div>
+        </div>
+        <div class="intro-cell"><span class="intro-cell-icon">🔬</span>
+          <div class="intro-cell-name">College Selection Guidance</div>
+          <div class="intro-cell-meta">Choose the right nursing college based on course preference and eligibility.
+          </div>
+        </div>
+        <div class="intro-cell"><span class="intro-cell-icon">🏥</span>
+          <div class="intro-cell-name">Financial Aid Assistance</div>
+          <div class="intro-cell-meta">Support for education loans, scholarships and fee planning.</div>
+        </div>
+        <div class="intro-cell"><span class="intro-cell-icon">📋</span>
+          <div class="intro-cell-name">Post-Admission Support</div>
+          <div class="intro-cell-meta">Smooth assistance for onboarding, orientation and transition to college life.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UG COURSES -->
+  <section class="ug" id="ug">
+    <div class="sec-wrap">
+      <div class="sec-label r">Undergraduate Programs</div>
+      <h2 class="sec-title r r1">Nursing <em>Courses</em> in Bangalore</h2>
+      <p class="sec-desc r r2">The pivotal role of nurses in the healthcare system has consistently driven the need for
+        high-quality nursing education. This growing demand for academic excellence and professionally trained
+        healthcare practitioners has led to the development of a wide range of nursing courses in Bangalore. These
+        programmes are offered across diploma, undergraduate, and postgraduate levels to cater to students at different
+        stages of their academic journey.<br>Each of these nursing courses is carefully structured to strengthen
+        students' theoretical understanding, clinical knowledge, and practical competencies. With a strong emphasis on
+        skill development and professional training, these programmes equip aspiring nurses with the expertise required
+        to excel in the evolving field of healthcare.<br>Let us explore the various nursing courses offered by some of
+        the top nursing colleges in Bangalore, along with their eligibility criteria and course duration, to help you
+        choose the programme that best aligns with your career aspirations.</p>
+      <div class="courses-grid r">
+        <div class="course-card">
+          <div class="course-img">
+            <img src="course-logo/ChatGPT Image Jun 2, 2026, 02_51_18 PM.png" alt="GNM" loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80';this.onerror=null;">
+            <div class="course-overlay">
+              <span class="course-tag">Diploma Program</span>
+              <div class="course-title">General Nursing &amp; Midwifery</div>
+              <div class="course-meta">Duration — 3 Years</div>
+              <div class="course-elig">10+2 or equivalent with minimum 40–50% aggregate in Physics, Chemistry &amp;
+                Biology.</div>
+              <a href="#lead-form" class="course-cta">Apply for GNM <svg class="arrow-svg" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-img">
+            <img src="course-logo/B.Sc Nursing.webp" alt="B.Sc Nursing" loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80';this.onerror=null;">
+            <div class="course-overlay">
+              <span class="course-tag">Undergraduate</span>
+              <div class="course-title">Bachelor of Science in Nursing</div>
+              <div class="course-meta">Duration — 4 Years</div>
+              <div class="course-elig">10+2 with min. 45–50% in PCB &amp; English. KCET required for Karnataka
+                admissions.</div>
+              <a href="#lead-form" class="course-cta">Apply for B.Sc <svg class="arrow-svg" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-img">
+            <img src="course-logo/Post Basic Bachelor of Science.webp" alt="PBB.Sc" loading="lazy"
+              onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=80';this.onerror=null;">
+            <div class="course-overlay">
+              <span class="course-tag">Post Basic</span>
+              <div class="course-title">Post Basic B.Sc Nursing</div>
+              <div class="course-meta">Duration — 2 Years</div>
+              <div class="course-elig">GNM diploma with min. 50%. 10+2 in PCB. Min. 1 year work experience as
+                RN/Midwife.</div>
+              <a href="#lead-form" class="course-cta">Apply for P.B.B.Sc <svg class="arrow-svg" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PG COURSES -->
+  <section class="pg" id="pg-courses">
+    <div class="pg-intro">
+      <div>
+        <div class="intro-label r">Advanced Specialisations</div>
+        <h2 class="intro-heading r r1">Postgraduate <em>Nursing</em> Courses</h2>
+      </div>
+      <div>
+        <p class="intro-body r r2" style="margin-top:0">M.Sc Nursing specialisations offer concentrated expertise in
+          specific clinical domains. All specialisations run for 2 years, preparing nurses for leadership and advanced
+          practice roles.</p>
+        <div class="r r3" style="margin-top:20px;padding:18px 22px;background:white;border-left:3px solid var(--red)">
+          <div
+            style="font-family:var(--cond);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-weight:700">
+            Eligibility Note</div>
+          <div style="font-size:.83rem;color:var(--muted);margin-top:5px;font-weight:300;line-height:1.65">B.Sc Nursing
+            / P.B.B.Sc Nursing with minimum 45–55% aggregate and one year of clinical or teaching experience.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-new-grid r">
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G1.webp'),linear-gradient(135deg,hsl(180,40%,18%) 0%,hsl(195,40%,15%) 100%);">
+        </div>
+        <div class="pg-new-num">01</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Medical-Surgical Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G2.webp'),linear-gradient(135deg,hsl(320,40%,16%) 0%,hsl(350,40%,15%) 100%);">
+        </div>
+        <div class="pg-new-num">02</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in OBG Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G3.webp'),linear-gradient(135deg,hsl(200,40%,18%) 0%,hsl(180,40%,18%) 100%);">
+        </div>
+        <div class="pg-new-num">03</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Paediatric Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G4.webp'),linear-gradient(135deg,hsl(45,40%,16%) 0%,hsl(20,40%,14%) 100%);">
+        </div>
+        <div class="pg-new-num">04</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Psychiatric Health Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G5.webp'),linear-gradient(135deg,hsl(150,40%,14%) 0%,hsl(130,40%,14%) 100%);">
+        </div>
+        <div class="pg-new-num">05</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Community Health Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G6.webp'),linear-gradient(135deg,hsl(270,40%,16%) 0%,hsl(240,40%,15%) 100%);">
+        </div>
+        <div class="pg-new-num">06</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Forensic Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G9.webp'),linear-gradient(135deg,hsl(30,40%,16%) 0%,hsl(45,40%,16%) 100%);">
+        </div>
+        <div class="pg-new-num">07</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Cardiothoracic Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G7.webp'),linear-gradient(135deg,hsl(210,40%,15%) 0%,hsl(200,40%,18%) 100%);">
+        </div>
+        <div class="pg-new-num">08</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Critical Care Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G10.webp'),linear-gradient(135deg,hsl(130,40%,14%) 0%,hsl(150,40%,14%) 100%);">
+        </div>
+        <div class="pg-new-num">09</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Neuro-Science Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G8.webp'),linear-gradient(135deg,hsl(350,40%,15%) 0%,hsl(320,40%,16%) 100%);">
+        </div>
+        <div class="pg-new-num">10</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Oncology Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G11.webp'),linear-gradient(135deg,hsl(240,40%,15%) 0%,hsl(270,40%,16%) 100%);">
+        </div>
+        <div class="pg-new-num">11</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Orthopaedic &amp; Rehabilitation Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G13.webp'),linear-gradient(135deg,hsl(20,40%,14%) 0%,hsl(30,40%,16%) 100%);">
+        </div>
+        <div class="pg-new-num">12</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Operation Room Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+      <div class="pg-new-card">
+        <div class="pg-new-card-bg"
+          style="background-image:url('pg-logos/G12.webp'),linear-gradient(135deg,hsl(195,40%,15%) 0%,hsl(180,40%,18%) 100%);">
+        </div>
+        <div class="pg-new-num">13</div>
+        <div class="pg-new-card-overlay"><span class="pg-new-tag">M.Sc Nursing</span>
+          <div class="pg-new-title">M.Sc in Emergency &amp; Disaster Nursing</div>
+          <div class="pg-new-meta">Duration — 2 Years</div>
+          <div class="pg-new-elig">B.Sc or P.B.B.Sc Nursing with 45–55% aggregate and one year of clinical experience.
+          </div><a href="#lead-form" class="pg-new-cta">Apply Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="adm" id="admissions">
+    <div class="adm-top">
+      <div>
+        <div class="sec-label r">Admission Process</div>
+        <h2 class="sec-title r r1">Nursing Admissions<br><em>in Bangalore</em></h2>
+      </div>
+      <p class="r r2" style="color:rgba(255,255,255,0.4);font-size:.9rem;font-weight:300;line-height:1.8">Admission
+        processes differ by course. Some programmes accept direct admissions while others require state-level entrance
+        exams.</p>
+    </div>
+    <div class="adm-table-wrap r">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Entrance Exam Required</th>
+            <th>Exam Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B.Sc Nursing</td>
+            <td><span class="badge-y">Yes</span></td>
+            <td>Karnataka Common Entrance Test (KCET)</td>
+          </tr>
+          <tr>
+            <td>Post Basic B.Sc Nursing</td>
+            <td><span class="badge-y">Yes</span></td>
+            <td>University / College-Specific Entrance Exams</td>
+          </tr>
+          <tr>
+            <td>GNM</td>
+            <td><span class="badge-n">No</span></td>
+            <td>None Required — Direct Admission</td>
+          </tr>
+          <tr>
+            <td>M.Sc Nursing</td>
+            <td><span class="badge-y">Yes</span></td>
+            <td>University / College-Specific Entrance Exams</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="adm-cta r r1">
+      <div class="adm-cta-l">
+        <div class="adm-cta-heading">"Navigate admissions with confidence."</div>
+        <p class="adm-cta-body">Our counsellors decode the admission process for you — from eligibility checks to seat
+          confirmation.</p>
+      </div>
+      <div class="adm-cta-r">
+        <div class="adm-cta-heading">Ready to take the first step?</div>
+        <p class="adm-cta-body">Connect with our experts today and secure your nursing seat for 2025–26.</p>
+        <a href="#lead-form" class="btn-white">Seize the Opportunity <svg class="arrow-svg" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+          </svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLEGES -->
+  <section class="colleges" id="colleges">
+    <div class="colleges-head">
+      <div>
+        <div class="intro-label r">Premier Institutions</div>
+        <h2 class="intro-heading r r1">Top Nursing Colleges<br>in <em>Bangalore</em></h2>
+      </div>
+      <p class="r r2" style="color:var(--muted);font-size:.9rem;font-weight:300;line-height:1.8">These institutions
+        excel in holistic nursing education, combining clinical training, research rigour, and theoretical foundation to
+        shape the healthcare leaders of tomorrow.</p>
+    </div>
+    <div class="colleges-grid r" id="collegesGrid"></div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why-us">
+    <div class="why-layout">
+      <div class="why-sticky">
+        <div class="sec-label r">Why Choose Us</div>
+        <h2 class="sec-title r r1">Why <em>BangaloreStudy?</em></h2>
+        <p class="sec-desc r r2" style="margin-bottom:32px">We operate around the clock to ensure every student
+          experiences a result-oriented, stress-free journey through nursing admissions.</p>
+        <a href="tel:018001208696" class="btn-primary r r3">
+          <svg class="arrow-svg" viewBox="0 0 24 24" style="width:15px;height:15px">
+            <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
+          </svg>
+          1800 120 8696
+        </a>
+      </div>
+      <div>
+        <div class="why-grid">
+          <div class="why-card r r1">
+            <div class="why-num">01</div>
+            <div class="why-ct">End-to-End Guidance</div>
+            <p class="why-cd">From application to enrolment, our team walks beside you through every step of the nursing
+              admission journey.</p>
+          </div>
+          <div class="why-card r r2">
+            <div class="why-num">02</div>
+            <div class="why-ct">15+ Partner Colleges</div>
+            <p class="why-cd">Direct partnerships with top nursing institutions in Bangalore ensure you access the best
+              available seats.</p>
+          </div>
+          <div class="why-card r r1">
+            <div class="why-num">03</div>
+            <div class="why-ct">24/7 Expert Support</div>
+            <p class="why-cd">Our counsellors are available around the clock to answer queries and provide timely,
+              accurate information.</p>
+          </div>
+          <div class="why-card r r2">
+            <div class="why-num">04</div>
+            <div class="why-ct">Simplified Documentation</div>
+            <p class="why-cd">We help you compile and verify all documents, eliminating errors and delays during the
+              admission process.</p>
+          </div>
+          <div class="why-card r r1">
+            <div class="why-num">05</div>
+            <div class="why-ct">Proven Track Record</div>
+            <p class="why-cd">Thousands of students have secured seats at premier nursing institutions through our
+              trusted guidance service.</p>
+          </div>
+          <div class="why-card r r2">
+            <div class="why-num">06</div>
+            <div class="why-ct">NRI &amp; Outstation Support</div>
+            <p class="why-cd">Specialised assistance for students from outside Karnataka and NRI applicants navigating
+              admissions remotely.</p>
+          </div>
+        </div>
+        <div class="why-cta-strip r">
+          <div class="why-cta-text">Curious to know more about our services?</div>
+          <a href="#lead-form" class="btn-dark">Connect Now <svg class="arrow-svg" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="faq-layout">
+      <div class="faq-sticky">
+        <div class="intro-label r">Common Questions</div>
+        <h2 class="intro-heading r r1">Frequently <em>Asked Questions</em></h2>
+        <p class="intro-body r r2" style="margin-top:18px">Everything you need to know about nursing admissions in
+          Bangalore.</p>
+        <a href="tel:018001208696" class="btn-primary r r3" style="margin-top:28px">
+          <svg class="arrow-svg" viewBox="0 0 24 24" style="width:15px;height:15px">
+            <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
+          </svg>
+          Call Free
+        </a>
+      </div>
+      <div>
+        <div class="faq-list">
+          <div class="faq-item r"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
+                course durations for B.Sc Nursing and GNM?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                </svg></span></button>
+            <div class="faq-body">
+              <div class="faq-body-inner">The B.Sc Nursing programme runs for 4 years, while GNM is a 3-year programme.
+                Both include extensive clinical training throughout their duration.</div>
+            </div>
+          </div>
+          <div class="faq-item r r1"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
+                eligibility criteria for B.Sc Nursing?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                </svg></span></button>
+            <div class="faq-body">
+              <div class="faq-body-inner">Students must clear KCET and have completed 12th with minimum 45–50% in
+                Physics, Chemistry, Biology, and English.</div>
+            </div>
+          </div>
+          <div class="faq-item r r2"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What is the
+                fee structure for nursing courses in Bangalore?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                </svg></span></button>
+            <div class="faq-body">
+              <div class="faq-body-inner">Fees vary based on seat type (Merit / Management / NRI) and institution type.
+                Our counsellors provide detailed, institution-specific fee breakdowns during consultation.</div>
+            </div>
+          </div>
+          <div class="faq-item r r3"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Does B.Sc
+                Nursing require NEET?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                </svg></span></button>
+            <div class="faq-body">
+              <div class="faq-body-inner">NEET is generally not required for nursing colleges in Bangalore. However,
+                students aspiring to join the Military Nursing Service (MNS) must clear NEET.</div>
+            </div>
+          </div>
+          <div class="faq-item r r4"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
+                requirements for M.Sc Nursing in Bangalore?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                  <path stroke-linecap="round" d="M12 5v14M5 12h14" />
+                </svg></span></button>
+            <div class="faq-body">
+              <div class="faq-body-inner">A B.Sc or P.B.B.Sc Nursing degree with minimum 45–55% aggregate, plus one year
+                of clinical experience. Some colleges require university-specific entrance exams.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="final-kicker">Shape your future · 2025–26 Admissions Open</div>
+    <h2 class="final-title r"><span style="display:block">The Best</span><em>Nursing Colleges</em><span
+        style="display:block">Await You.</span></h2>
+    <p class="final-sub r r1">Don't miss your chance to secure a seat at Bangalore's top nursing institutions. Expert
+      guidance, from eligibility to enrolment.</p>
+    <div class="final-actions r r2">
+      <a href="#lead-form" class="btn-primary" style="margin-top:0">Secure Your Seat <svg class="arrow-svg"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
+        </svg></a>
+      <a href="tel:018001208696" class="btn-hero-ghost-cta">
+        <svg class="arrow-svg" viewBox="0 0 24 24" style="width:13px;height:13px">
+          <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
+        </svg>
+        Call Free — 1800 120 8696
+      </a>
+    </div>
+    <div class="final-divider"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a href="#" class="nav-brand">
+          <img src="Media/BangaloreStudy_WLogo.svg" alt="">
+        </a>
+        <p class="footer-tagline">Your trusted partner for nursing college admissions in Bangalore. Expert guidance, top
+          colleges, seamless process.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-contacts">
+          <li><a href="tel:018001208696">1800 120 8696 (Toll Free)</a></li>
+          <li><a href="tel:09036020076">+91 90360 20076</a></li>
+          <li><a href="tel:08026631169">080-26631169</a></li>
+          <li><a href="tel:08022454991">080-22454991</a></li>
+          <li><a href="tel:09715024365">+971 502436552 (Dubai)</a></li>
+        </ul>
+        <div class="socials">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg></a>
+          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+            </svg></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Bangalorestudy.com. All Rights Reserved.</span>
+      <span class="footer-copy">Nursing Admissions in Bangalore 2025–26</span>
+    </div>
+  </footer>
+
+  <script>
+    function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden' }
+    function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = '' }
+    window.addEventListener('scroll', () => {
+      const s = document.documentElement.scrollTop;
+      const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.getElementById('prog').style.width = (s / h * 100) + '%';
+      document.getElementById('navbar').classList.toggle('scrolled', s > 20);
+    });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target) } });
+    }, { threshold: .07 });
+    document.querySelectorAll('.r').forEach(el => obs.observe(el));
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    }
+    function submitForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('formBtn');
+      btn.textContent = '✓ Submitted — We\'ll be in touch soon!';
+      btn.style.background = '#2C687B';
+      setTimeout(() => { btn.textContent = 'Submit Application  →'; btn.style.background = ''; e.target.reset(); }, 4000);
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
+      });
+    });
+  </script>
+</body>
+
+</html>
