@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
     :root {
       --red: #DB1A1A;
@@ -683,8 +684,8 @@
       max-width: 1320px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
+      grid-template-columns: 1fr 2.7fr;
+      gap: 40px;
       align-items: center
     }
 
@@ -1333,6 +1334,48 @@
       }
     }
 
+    /* MAYBE BADGE */
+    .badge-m {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 32px;
+      padding: 8px 5px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #e9c629, #ebe293);
+      color: #fff;
+      font-family: var(--cond);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      animation: glowPulseReds 2.5s ease-in-out infinite;
+    }
+
+    .badge-m::before {
+      content: "✕";
+      font-weight: 700;
+    }
+
+    @keyframes glowPulseReds {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow:
+          0 8px 20px rgba(239, 208, 68, 0.25),
+          0 0 0 rgb(255, 208, 0);
+      }
+
+      50% {
+        transform: scale(1.04);
+        box-shadow:
+          0 12px 28px rgba(239, 208, 68, 0.25),
+          0 0 20px rgb(239, 208, 68);
+      }
+    }
+
     /* HOVER EFFECT */
     .tbl tbody tr:hover .badge-y,
     .tbl tbody tr:hover .badge-n {
@@ -1495,9 +1538,10 @@
 
     .why-ct {
       font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 400;
+      font-size: 1.3rem;
+      font-weight: 500;
       color: white;
+      letter-spacing: 0.06rem;
       margin-bottom: 7px
     }
 
@@ -1509,47 +1553,161 @@
     }
 
     .why-cta-strip {
-      background: var(--red);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+
       padding: 36px 44px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 36px;
       align-items: center;
-      margin-top: 50px
+      margin-top: 50px;
+
+      background: #750000;
+    }
+
+    /* Background Image + Fade */
+    .why-cta-strip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+
+      background-image:
+        linear-gradient(to right,
+          rgba(117, 0, 0, 0) 0%,
+          rgba(117, 0, 0, .15) 20%,
+          rgba(117, 0, 0, .45) 40%,
+          rgba(117, 0, 0, .75) 65%,
+          rgba(117, 0, 0, .95) 85%,
+          #750000 100%),
+        url("Media/nursing_hex_red_black_888x115.png");
+
+      background-position: left center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* Soft Glow */
+    .why-cta-strip .glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+
+      background:
+        radial-gradient(circle at 85% 50%,
+          rgba(255, 255, 255, .12),
+          transparent 45%);
+    }
+
+    /* Shine */
+    .why-cta-strip::after {
+      content: "";
+      position: absolute;
+      top: -60%;
+      left: 120%;
+
+      width: 180px;
+      height: 250%;
+
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, .08),
+          rgba(255, 255, 255, 0.13),
+          rgba(255, 255, 255, 0.164),
+          rgba(255, 255, 255, .08),
+          transparent);
+
+      transform: rotate(1deg);
+      filter: blur(8px);
+
+      animation: shineSweep 3s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shineSweep {
+      0% {
+        left: 120%;
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: .9;
+      }
+
+      75% {
+        opacity: .1;
+      }
+
+      100% {
+        left: -250px;
+        opacity: -1;
+      }
     }
 
     .why-cta-text {
+      position: relative;
+      z-index: 2;
+
       font-family: var(--serif);
       font-size: 1.5rem;
-      font-weight: 300;
-      color: white;
-      letter-spacing: -.02em;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .03em;
       font-style: italic;
-      line-height: 1.2
+      line-height: 1.2;
     }
 
     .btn-dark {
+      position: relative;
+      z-index: 2;
+
       font-family: var(--cond);
-      font-size: .76rem;
+      font-size: .86rem;
       letter-spacing: .14em;
       text-transform: uppercase;
-      font-weight: 700;
-      color: white;
-      background: var(--deep-3);
-      border: none;
-      padding: 12px 28px;
-      cursor: pointer;
-      transition: all .25s;
+      font-weight: 800;
+
+      color: var(--maroon);
       text-decoration: none;
+
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      white-space: nowrap;
-      border-radius: 4px
+      gap: 10px;
+
+      padding: 12px 28px;
+      border-radius: 10px;
+
+      background: rgb(255, 255, 255);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, .18);
+
+      transition: all .35s ease;
     }
 
     .btn-dark:hover {
-      background: var(--deep-2)
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, .15);
+      border-color: rgba(255, 255, 255, .35);
+    }
+
+    .arrow-svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      transition: transform .3s ease;
+    }
+
+    .btn-dark:hover .arrow-svg {
+      transform: translateX(4px);
     }
 
     /* FAQ */
@@ -1606,9 +1764,9 @@
     }
 
     .faq-q {
-      font-family: var(--serif);
+      font-family: var(--deep-3);
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--deep);
       line-height: 1.35
     }
@@ -1752,14 +1910,13 @@
 
     /* FOOTER */
     footer {
-      background: var(--deep-3);
+      background: #184a50;
       padding: 56px 20px 32px;
-      border-top: 1px solid rgba(140, 199, 196, 0.08)
     }
 
     .footer-top {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 40px;
       max-width: 1220px;
       margin: 0 auto;
@@ -1835,23 +1992,6 @@
 
     .footer-contacts a:hover {
       color: var(--teal)
-    }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1320px;
-      margin: 0 auto
-    }
-
-    .footer-copy {
-      font-family: var(--cond);
-      font-size: .65rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.18);
-      font-weight: 300
     }
 
     .nav-brand.footer-brand-logo img {
@@ -2281,24 +2421,25 @@
         <div class="hero-left">
           <div class="hero-badge-pill">
             <div class="hero-badge-dot"></div>
-            <span>Nursing Admissions 2026–27</span>
+            <span>Nursing Admissions in Bangalore 2026–27</span>
           </div>
           <h1 class="hero-title-new">
             Build a Future
             <em>of Care &amp;</em>
-            Excellence.
+            Excellence!
           </h1>
-          <p class="hero-sub-new">Secure a seat at Bangalore's finest nursing colleges. Expert, end-to-end guidance
-            through every stage of your 2025–26 admission — from eligibility to enrolment.</p>
+          <p class="hero-sub-new">Explore admissions to top nursing colleges in Bangalore and take the first step
+            towards a fulfilling career in healthcare by securing a seat in one of Bangalore’s finest nursing colleges.
+          </p>
           <div class="hero-actions">
 
             <a href="#" class="hero-btn-primary">
-              Secure Your Seat
+              Explore Courses
               <span>→</span>
             </a>
 
             <a href="tel:18001208696" class="hero-btn-secondary">
-              ☎ Grab Your Seat Now!
+              Grab Your Seat Now!
             </a>
 
           </div>
@@ -2414,51 +2555,27 @@
             </div>
             <div>
               <div class="form-card-title">Start Your Application</div>
-              <div class="form-card-sub">Personalised Guidance · 2025–26 Intake</div>
+              <div class="form-card-sub">Personalized Guidance for the 2026-27 Batch </div>
             </div>
           </div>
           <form id="appForm" onsubmit="submitForm(event)">
             <div class="f-group">
               <label class="f-label">Full Name</label>
-              <input class="f-input" type="text" placeholder="Your full name" required>
+              <input class="f-input" type="text" placeholder="Full Name: " required>
             </div>
             <div class="f-group">
-              <label class="f-label">Phone Number</label>
-              <input class="f-input" type="tel" placeholder="+91 XXXXX XXXXX" required>
+              <label class="f-label">Phone No</label>
+              <input class="f-input" type="tel" placeholder="Phone No:" required>
             </div>
             <div class="f-group">
               <label class="f-label">Email Address</label>
-              <input class="f-input" type="email" placeholder="your@email.com">
-            </div>
-            <div class="f-group">
-              <label class="f-label">Interested Course</label>
-              <div class="f-select-wrap">
-                <select class="f-input" required>
-                  <option value="" disabled selected>B.Sc Nursing</option>
-                  <option>GNM</option>
-                  <option>B.Sc Nursing</option>
-                  <option>P.B.B.Sc Nursing</option>
-                  <option>M.Sc Nursing</option>
-                </select>
-              </div>
-            </div>
-            <div class="f-group">
-              <label class="f-label">Interested Specializations</label>
-              <div class="f-select-wrap">
-                <select class="f-input" required>
-                  <option value="" disabled selected>B.Sc Nursing</option>
-                  <option>GNM</option>
-                  <option>B.Sc Nursing</option>
-                  <option>P.B.B.Sc Nursing</option>
-                  <option>M.Sc Nursing</option>
-                </select>
-              </div>
+              <input class="f-input" type="email" placeholder="Email Address:">
             </div>
             <div class="f-group">
               <label class="f-label">State</label>
               <div class="f-select-wrap">
                 <select class="f-input" required>
-                  <option value="" disabled selected>Select your state</option>
+                  <option value="" disabled selected>Select state</option>
                   <option>Andhra Pradesh</option>
                   <option>Arunachal Pradesh</option>
                   <option>Assam</option>
@@ -2494,6 +2611,46 @@
                 </select>
               </div>
             </div>
+            <div class="f-group">
+              <label class="f-label">State</label>
+              <div class="f-select-wrap">
+                <select class="f-input" required>
+                  <option value="" disabled selected>B.Sc Nursing</option>
+                  <option>GNM</option>
+                  <option>B.Sc Nursing</option>
+                  <option>P.B.B.Sc Nursing</option>
+                  <option>M.Sc Nursing</option>
+                </select>
+              </div>
+            </div>
+            <div class="f-group">
+              <label class="f-label">Course</label>
+              <div class="f-select-wrap">
+                <select class="f-input" required>
+                  <option value="" disabled selected>B.Sc Nursing</option>
+                  <option>GNM</option>
+                  <option>B.Sc Nursing</option>
+                  <option>P.B.B.Sc Nursing</option>
+                  <option>M.Sc Nursing</option>
+                  <option>Medical-Surgical Nursing</option>
+                  <option>Obstetrics &amp; Gynaecological Nursing</option>
+                  <option>Paediatric Nursing</option>
+                  <option>Mental Health Nursing</option>
+                  <option>Community Health Nursing</option>
+                  <option>Critical Care Nursing</option>
+                  <option>Oncology Nursing</option>
+                  <option>Cardiothoracic Nursing</option>
+                  <option>Neuroscience Nursing</option>
+                  <option>Operation Theatre Nursing</option>
+                  <option>Orthopaedic &amp; Rehabilitation Nursing</option>
+                  <option>Emergency &amp; Disaster Nursing</option>
+                  <option>Nephro Nursing</option>
+                  <option>Forensic Nursing</option>
+                  <option>Geriatric Nursing</option>
+                </select>
+              </div>
+            </div>
+
             <button type="submit" class="f-submit" id="formBtn">
               Submit Application &nbsp;→
             </button>
@@ -2514,8 +2671,8 @@
             </svg>
           </div>
           <div class="stat-text">
-            <div class="stat-val">10,000<em>+</em></div>
-            <div class="stat-label">Trusted by Students</div>
+            <div class="stat-val">5000<em>+</em></div>
+            <div class="stat-label">Students Guided</div>
           </div>
         </div>
         <div class="stat-item">
@@ -2527,7 +2684,7 @@
           </div>
           <div class="stat-text">
             <div class="stat-val">50<em>+</em></div>
-            <div class="stat-label">Top Nursing Colleges</div>
+            <div class="stat-label">Students Guided</div>
           </div>
         </div>
         <div class="stat-item">
@@ -2538,7 +2695,7 @@
             </svg>
           </div>
           <div class="stat-text">
-            <div class="stat-val">95<em>%</em></div>
+            <div class="stat-val">25<em>+</em></div>
             <div class="stat-label">Admission Success Rate</div>
           </div>
         </div>
@@ -2550,7 +2707,7 @@
             </svg>
           </div>
           <div class="stat-text">
-            <div class="stat-val">24<em>/7</em></div>
+            <div class="stat-val">98<em>%</em></div>
             <div class="stat-label">Expert Counselling Support</div>
           </div>
         </div>
@@ -2576,7 +2733,7 @@
   <section class="intro" id="courses">
     <div class="intro-grid-layout">
       <div>
-        <div class="intro-label r">Nursing Programs</div>
+        <div class="intro-label r">ABOUT US</div>
         <h2 class="intro-heading r r1">Why <em>Us?</em></h2>
         <p class="intro-body r r2">BangaloreStudy is committed to guiding students through a seamless and result-driven
           nursing admission journey in Bangalore.</p>
@@ -2585,28 +2742,29 @@
           </svg></a>
       </div>
       <div class="intro-cells r r2">
-        <div class="intro-cell"><span class="intro-cell-icon">🎓</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-person-check"></i></span>
           <div class="intro-cell-name">Expert Academic Counselling</div>
-          <div class="intro-cell-meta">Get personalized guidance from experienced admission experts.</div>
+          <div class="intro-cell-meta">Get personalized guidance from experienced admission experts especially for the
+            Nursing course.</div>
         </div>
-        <div class="intro-cell"><span class="intro-cell-icon">🏥</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-building-add"></i></span>
           <div class="intro-cell-name">Tailored Admission Assistance</div>
           <div class="intro-cell-meta">Receive admission support based on your academic profile and career goals.</div>
         </div>
-        <div class="intro-cell"><span class="intro-cell-icon">📋</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-window-plus"></i></span>
           <div class="intro-cell-name">Application Process Support</div>
           <div class="intro-cell-meta">End-to-end assistance with applications, documentation and submissions.</div>
         </div>
-        <div class="intro-cell"><span class="intro-cell-icon">🔬</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-check2-square"></i></span>
           <div class="intro-cell-name">College Selection Guidance</div>
           <div class="intro-cell-meta">Choose the right nursing college based on course preference and eligibility.
           </div>
         </div>
-        <div class="intro-cell"><span class="intro-cell-icon">🏥</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-bank2"></i></span>
           <div class="intro-cell-name">Financial Aid Assistance</div>
           <div class="intro-cell-meta">Support for education loans, scholarships and fee planning.</div>
         </div>
-        <div class="intro-cell"><span class="intro-cell-icon">📋</span>
+        <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-people"></i></span>
           <div class="intro-cell-name">Post-Admission Support</div>
           <div class="intro-cell-meta">Smooth assistance for onboarding, orientation and transition to college life.
           </div>
@@ -2624,12 +2782,17 @@
         high-quality nursing education. This growing demand for academic excellence and professionally trained
         healthcare practitioners has led to the development of a wide range of nursing courses in Bangalore. These
         programmes are offered across diploma, undergraduate, and postgraduate levels to cater to students at different
-        stages of their academic journey.<br>Each of these nursing courses is carefully structured to strengthen
-        students' theoretical understanding, clinical knowledge, and practical competencies. With a strong emphasis on
-        skill development and professional training, these programmes equip aspiring nurses with the expertise required
-        to excel in the evolving field of healthcare.<br>Let us explore the various nursing courses offered by some of
-        the top nursing colleges in Bangalore, along with their eligibility criteria and course duration, to help you
-        choose the programme that best aligns with your career aspirations.</p>
+        stages of their academic journey.
+        <br>
+        Each of these nursing courses is carefully structured to strengthen students’ theoretical understanding,
+        clinical knowledge, and practical competencies. With a strong emphasis on skill development and professional
+        training, these programmes equip aspiring nurses with the expertise required to excel in the evolving field of
+        healthcare.
+        <br>
+        Let us explore the various nursing courses offered by some of the top nursing colleges in Bangalore, along with
+        their eligibility criteria and course duration, to help you choose the programme that best aligns with your
+        career aspirations.
+      </p>
       <div class="courses-grid r">
         <div class="course-card">
           <div class="course-img">
@@ -2640,12 +2803,12 @@
               <div class="course-title">General Nursing &amp; Midwifery(GNM)</div>
               <div class="course-meta">Duration — 3 Years</div>
               <div class="course-elig">Eligibility: Candidates must have completed 10+2 or equivalent with a minimum
-                aggregate of 40%–50% from a recognised board.
+                aggregate of 40%–50% from a recognised board
 
-                This programme is a diploma-level nursing course designed to prepare students for a rewarding career in
-                patient care and healthcare services. The course focuses on building a strong foundation in nursing
-                principles, clinical practices, and midwifery care, enabling students to deliver quality healthcare
-                across diverse medical settings.
+                The GNM nursing course is a diploma-level nursing programme designed to prepare students for a rewarding
+                career in patient care and healthcare services. The course focuses on building a strong foundation in
+                nursing principles, clinical practices, and midwifery care, enabling students to deliver quality
+                healthcare across diverse medical settings.
               </div>
               <a href="#lead-form" class="course-cta">Apply for GNM <svg class="arrow-svg" viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
@@ -2659,15 +2822,15 @@
               onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80';this.onerror=null;">
             <div class="course-overlay">
               <span class="course-tag">Undergraduate</span>
-              <div class="course-title">Bachelor of Science in Nursing</div>
+              <div class="course-title">Bachelor of Science (B.Sc) in Nursing</div>
               <div class="course-meta">Duration — 4 Years</div>
               <div class="course-elig">Eligibility: Candidates must have completed 10+2 or equivalent with a minimum
-                aggregate of 45%–50% in Physics, Chemistry, and Biology (PCB) from a recognised board.
+                aggregate of 45%–50% in Physics, Chemistry, and Biology (PCB) from a recognised board
 
-                This is an undergraduate programme designed to equip students with comprehensive knowledge and practical
+                The B.Sc Nursing course is designed to equip students with comprehensive knowledge and practical
                 expertise in nursing and healthcare. The course focuses on building a strong foundation in nursing
                 sciences, patient care, community health, and clinical practices through a combination of academic
-                learning and hands-on clinical training.
+                learning and hands-on clinical training. Also, the B.Sc nursing course duration is 4 years.
               </div>
               <a href="#lead-form" class="course-cta">Apply for B.Sc <svg class="arrow-svg" viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
@@ -2681,7 +2844,7 @@
               onerror="this.src='https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=800&q=80';this.onerror=null;">
             <div class="course-overlay">
               <span class="course-tag">Post Basic</span>
-              <div class="course-title">Post Basic B.Sc Nursing</div>
+              <div class="course-title">Post Basic B.Sc Nursing (P.B.B.Sc Nursing)</div>
               <div class="course-meta">Duration — 2 Years</div>
               <div class="course-elig">Eligibility: Candidates must have completed General Nursing and Midwifery (GNM)
                 and be registered as a Registered Nurse and Registered Midwife (RNRM) with the State Nursing Council.
@@ -2740,70 +2903,131 @@
 
         /* BIG CARD (IMAGE BACKGROUND) */
         .big-card {
+          background: #fff;
+          border-radius: 1px;
+          overflow: hidden;
+          box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
           position: sticky;
           top: 100px;
-          min-height: 520px;
-          padding: 30px;
-          background-color: #ffffff;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          color: #fff;
-          overflow: hidden;
-          border-left: 2px solid var(--red);
+          border-bottom: 3px solid var(--maroon-2);
         }
 
-        /* OVERLAY */
-        .big-card::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(60deg,
-              rgba(0, 62, 87, 0),
-              rgba(0, 63, 88, 0),
-              rgba(5, 59, 104, 0));
-        }
-
-        .big-card>* {
+        .big-card-banner {
           position: relative;
-          z-index: 2;
+          height: 180px;
+          overflow: hidden;
+        }
+
+        .big-card-banner img {
+          width: 100%;
+          height: 180%;
+          object-fit: cover;
+        }
+
+        .banner-wave {
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 100%;
+          height: 80px;
+        }
+
+        .big-card-content {
+          padding: 22px 32px;
         }
 
         .big-title {
-          font-family: var(--serif);
           font-size: 1.7rem;
-          font-weight: 800;
-          margin-bottom: 0px;
-          color: var(--red-dark);
+          line-height: 1.1;
+          color: var(--maroon);
+          font-weight: 700;
+          margin-bottom: 16px;
+          text-decoration-line: underline;
+          text-decoration-thickness: 1.5px;
+          text-underline-offset: 4px;
+        }
+
+        .info-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 15px 40px;
+        }
+
+        .info-item:nth-child(3) {
+          grid-column: 1 / -1;
+        }
+
+        .info-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 18px;
+        }
+
+        .info-icon {
+          width: 34px;
+          height: 34px;
+          min-width: 34px;
+          border-radius: 50%;
+          background: #fff4f4;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 8px 20px rgba(107, 15, 15, 0.08);
+        }
+
+        .info-icon i {
+          font-size: 26px;
+          color: #7a1111;
+        }
+
+        .info-item div:last-child {
+          flex: 1;
+        }
+
+        .info-item span {
+          display: block;
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #17384a;
+          margin-bottom: 8px;
+        }
+
+        .info-item p {
+          margin: 0;
+          color: #26303a;
+          line-height: 1.6;
+          font-size: 0.9rem;
+        }
+
+        .divider {
+          height: 1px;
+          background: #e7e7e7;
+          margin: 14px 0;
         }
 
         .big-desc {
-          color: var(--deep-2);
-          line-height: 1.7;
-          font-size: 1rem;
-          font-weight: 500;
+          color: #24465a;
+          line-height: 1.6;
+          margin-bottom: 8px;
         }
 
         .big-btn {
           display: inline-flex;
-          margin-top: 20px;
-
-
-          border-radius: 999px;
-          color: var(--maroon-2);
-
-          font-family: var(--cond);
-          font-size: .9rem;
-          letter-spacing: .14em;
-          text-transform: uppercase;
-          font-weight: 700;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 18px;
+          background: var(--maroon);
+          color: #fff;
+          border-radius: 3px;
           text-decoration: none;
-          transition: .3s ease;
+          font-size: 15px;
+          font-weight: 700;
+          letter-spacing: .08em;
+          transition: .3s;
         }
 
         .big-btn:hover {
-          transform: translateX(2px);
-
+          transform: translateY(-2px);
         }
 
         /* SMALL GRID */
@@ -2840,7 +3064,7 @@
           position: absolute;
           inset: 0;
           background: linear-gradient(to top,
-              rgba(7, 7, 7, 0.788),
+              rgb(0, 20, 26),
               rgba(0, 0, 0, 0));
           z-index: 1;
         }
@@ -2866,7 +3090,7 @@
           font-size: 1.2rem;
           font-weight: 600;
           line-height: 1.3;
-          letter-spacing: 0.6px;
+          letter-spacing: 0.9px !important;
         }
 
         .desc {
@@ -2914,41 +3138,91 @@
             grid-template-columns: 1fr;
           }
         }
+
+        @media(max-width:1000px) {
+          .layout-section {
+            padding: 10px 0vw;
+
+          }
+
+          .adm-top {
+            gap: 10px;
+          }
+        }
       </style>
 
       <div class="layout-wrap">
 
         <!-- BIG CARD -->
         <div class="big-card">
-          <div class="big-title">M.Sc in Medical-Surgical Nursing</div>
 
-          <div class="big-desc"><br>
-            Duration: 2 Years <br>
-            <strong>Eligibility:</strong> Candidates must have completed B.Sc Nursing / P.B.B.Sc Nursing with a minimum
-            aggregate of 55%
-            from a recognised institution and must be registered as a Registered Nurse and Registered Midwife (RNRM)
-            with
-            the State Nursing Council.
+          <div class="big-card-banner">
+            <img src="Media/19711 (1).jpg" alt="">
+
+            <svg class="banner-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+              <path fill="#ffffff" d="M0,85
+               C120,20 260,20 420,65
+               C580,110 720,115 900,80
+               C1080,45 1230,110 1440,60
+               L1440,120
+               L0,120
+               Z">
+              </path>
+            </svg>
           </div>
 
-          <div class="big-desc">
-            The Master of Science (M.Sc) in Nursing is a postgraduate programme designed to provide advanced theoretical
-            knowledge, clinical expertise, and research-based competencies in specialised areas of nursing. The course
-            focuses on strengthening leadership, critical thinking, clinical decision-making, and advanced patient care
-            skills through in-depth academic learning and practical training, preparing students for senior roles in
-            healthcare, nursing education, administration, and specialised clinical practice. Students can pursue
-            specializations that include Obstetrics and Gynaecological Nursing, Paediatric Nursing, Community Health
-            Nursing, Cardiothoracic Nursing etc. thereby enabling them to build expertise in specific domains of modern
-            healthcare.
+          <div class="big-card-content">
+
+            <h2 class="big-title">
+              M.Sc in Medical-Surgical Nursing
+            </h2>
+
+            <div class="big-line"></div>
+
+            <div class="info-grid">
+
+              <div class="info-item">
+                <div class="info-icon"> <i class="bi bi-clock"></i></div>
+                <div>
+                  <span>Course Duration:</span>
+                  <p>2 Years</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon"> <i class="bi bi-mortarboard"></i></div>
+                <div>
+                  <span>Eligibility</span>
+                  <p>Candidates must have completed B.Sc Nursing / P.B.B.Sc Nursing with a minimum aggregate of 55% from
+                    a recognised institution and must be registered as a Registered Nurse and Registered Midwife (RNRM)
+                    with the State Nursing Council.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="big-desc">
+              The Master of Science (M.Sc) in Nursing is a postgraduate programme designed to provide advanced
+              theoretical knowledge, clinical expertise, and research-based competencies in specialized areas of
+              nursing. The course focuses on strengthening leadership, critical thinking, clinical decision-making, and
+              advanced patient care skills through in-depth academic learning and practical training especially with the
+              various specializations that are offered.
+            </p>
+
+            <a href="#lead-form" class="big-btn">
+              APPLY NOW →
+            </a>
+
           </div>
 
-          <a href="#lead-form" class="big-btn">Apply Now →</a>
         </div>
 
         <!-- SMALL CARDS -->
         <div class="small-grid">
 
-          <div class="small-card" style="background-image:url('pg-logos/G1.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Medical-Surgical Nursing.webp')">
             <div class="overlay">
               <div class="title">Medical-Surgical Nursing</div>
 
@@ -2956,7 +3230,8 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G2.webp')">
+          <div class="small-card"
+            style="background-image:url('new-course-img/Obstetrics & Gynaecological Nursing copy.webp')">
             <div class="overlay">
               <div class="title">Obstetrics & Gynaecological Nursing</div>
 
@@ -2964,7 +3239,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G3.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Paediatric Nursing.webp')">
             <div class="overlay">
               <div class="title">Paediatric Nursing</div>
 
@@ -2972,7 +3247,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G4.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Mental Health Nursing.webp')">
             <div class="overlay">
               <div class="title">Mental Health Nursing</div>
 
@@ -2980,7 +3255,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G5.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Community Health Nursing.webp')">
             <div class="overlay">
               <div class="title">Community Health Nursing</div>
 
@@ -2988,7 +3263,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G6.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Critical Care Nursing.webp')">
             <div class="overlay">
               <div class="title">Critical Care Nursing</div>
 
@@ -2996,7 +3271,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G7.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Oncology Nursing.webp')">
             <div class="overlay">
               <div class="title">Oncology Nursing</div>
 
@@ -3004,7 +3279,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G8.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Cardiothoracic Nursing.webp')">
             <div class="overlay">
               <div class="title">Cardiothoracic Nursing</div>
 
@@ -3012,7 +3287,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G9.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Neuroscience Nursing.webp')">
             <div class="overlay">
               <div class="title">Neuroscience Nursing</div>
 
@@ -3020,7 +3295,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G10.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Operation Theatre Nursing.webp')">
             <div class="overlay">
               <div class="title">Operation Theatre Nursing</div>
 
@@ -3028,7 +3303,8 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G11.webp')">
+          <div class="small-card"
+            style="background-image:url('new-course-img/Orthopaedic & Rehabilitation Nursing.webp')">
             <div class="overlay">
               <div class="title">Orthopaedic & Rehabilitation Nursing</div>
 
@@ -3036,7 +3312,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G12.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Emergency & Disaster Nursing.webp')">
             <div class="overlay">
               <div class="title">Emergency & Disaster Nursing</div>
 
@@ -3044,7 +3320,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/G13.webp')">
+          <div class="small-card" style="background-image:url('new-course-img/Nephro Nursing.webp')">
             <div class="overlay">
               <div class="title">Nephro Nursing</div>
 
@@ -3052,7 +3328,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/Forensic Nursing.png')">
+          <div class="small-card" style="background-image:url('new-course-img/Forensic Nursing.webp')">
             <div class="overlay">
               <div class="title">Forensic Nursing</div>
 
@@ -3060,7 +3336,7 @@
             </div>
           </div>
 
-          <div class="small-card" style="background-image:url('pg-logos/Geriatric Nursing.png')">
+          <div class="small-card" style="background-image:url('new-course-img/Geriatric Nursing.webp')">
             <div class="overlay">
               <div class="title">Geriatric Nursing</div>
 
@@ -3080,9 +3356,12 @@
         <div class="sec-label r">Admission Process</div>
         <h2 class="sec-title r r1">Nursing Admissions<br><em>in Bangalore</em></h2>
       </div>
-      <p class="r r2" style="color:rgba(255,255,255,0.4);font-size:.9rem;font-weight:300;line-height:1.8">Admission
-        processes differ by course. Some programmes accept direct admissions while others require state-level entrance
-        exams.</p>
+      <p class="r r2" style="color:rgba(255, 255, 255, 0.747);font-size:1rem;font-weight:300;line-height:1.8">Admissions
+        to
+        nursing courses generally vary based on the programme chosen. While some courses offer admission based on
+        academic merit, others require candidates to qualify through state-level or university/college-specific entrance
+        examinations.
+      </p>
     </div>
     <div class="adm-table-wrap r">
       <table class="tbl">
@@ -3095,38 +3374,39 @@
         </thead>
         <tbody>
           <tr>
-            <td>B.Sc Nursing</td>
-            <td><span class="badge-y"></span></td>
+            <td>B.Sc Nursing Admission</td>
+            <td><span class="badge-y">Yes</span></td>
             <td>Karnataka Common Entrance Test (KCET)</td>
           </tr>
           <tr>
-            <td>Post Basic B.Sc Nursing</td>
-            <td><span class="badge-y"></span></td>
-            <td>University / College-Specific Entrance Exams</td>
+            <td>Post Basic B.Sc Nursing Admission</td>
+            <td><span class="badge-m">Maybe</span></td>
+            <td>University/ College-Specific Entrance Test or Merit-Based Admission (depends on institution)</td>
           </tr>
           <tr>
-            <td>GNM</td>
-            <td><span class="badge-n"></span></td>
-            <td>None Required — Direct Admission</td>
+            <td>GNM Admission</td>
+            <td><span class="badge-n">No</span></td>
+            <td>Merit-Based Admission (Class 12 Marks)</td>
           </tr>
           <tr>
-            <td>M.Sc Nursing</td>
-            <td><span class="badge-y"></span></td>
-            <td>University / College-Specific Entrance Exams</td>
+            <td>M.Sc Nursing Admission</td>
+            <td><span class="badge-y">Yes</span></td>
+            <td>KEA M.Sc Nursing Entrance Exam / University Entrance Test</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="adm-cta r r1">
       <div class="adm-cta-l">
-        <div class="adm-cta-heading">"Navigate admissions with confidence."</div>
-        <p class="adm-cta-body">Our counsellors decode the admission process for you — from eligibility checks to seat
-          confirmation.</p>
+        <div class="adm-cta-heading">"Your path to a nursing career starts here."</div>
+        <p class="adm-cta-body">Our counsellors simplify every step of the admission journey, from course selection and
+          eligibility checks to application support and seat allotment.</p>
       </div>
       <div class="adm-cta-r">
-        <div class="adm-cta-heading">Ready to take the first step?</div>
-        <p class="adm-cta-body">Connect with our experts today and secure your nursing seat for 2025–26.</p>
-        <a href="#lead-form" class="btn-white">Seize the Opportunity <svg class="arrow-svg" viewBox="0 0 24 24">
+        <div class="adm-cta-heading">Ready to secure your nursing admission?</div>
+        <p class="adm-cta-body">Connect with our experts and receive personalized guidance for the upcoming admission
+          cycle.</p>
+        <a href="#lead-form" class="btn-white">START YOUR ADMISSION JOURNEY <svg class="arrow-svg" viewBox="0 0 24 24">
             <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
           </svg></a>
       </div>
@@ -3323,11 +3603,16 @@
     <!-- HEADER -->
     <div class="colleges-head">
       <div>
-        <div class="intro-label r in">Premier Institutions</div>
+        <div class="intro-label r in">RENOWNED INSTITUTIONS</div>
         <h2 class="intro-heading r r1 in">Top Nursing Colleges in <em>Bangalore</em></h2>
       </div>
       <p style="color:#6b7f7f; line-height:1.8;">
-        Explore top nursing colleges with excellent clinical training, infrastructure, and academic excellence.
+        Nursing colleges in Bangalore have played a crucial role in fostering academic excellence among nursing
+        aspirants who strive to contribute significantly to the healthcare field. The top nursing colleges in Bangalore
+        emphasize holistic nursing education by combining clinical training, research rigour, and theoretical foundation
+        to shape the healthcare leaders of tomorrow. This approach offers students the opportunity to grow both
+        professionally and personally, thereby encouraging them to shape the future of the nursing profession.
+
       </p>
     </div>
 
@@ -3340,15 +3625,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2019</span>
           </div>
-          <div class="college-name">Rajiv Gandhi College of Nursing</div>
+          <div class="college-name">Akash Institute of Nursing</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Devanahalli, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3359,15 +3644,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2003</span>
           </div>
-          <div class="college-name">Kempegowda Institute</div>
+          <div class="college-name">BGS Institute of Nursing Sciences </div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Kengeri, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3379,15 +3664,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2002</span>
           </div>
-          <div class="college-name">East Point College</div>
+          <div class="college-name">College of Nursing Sciences, Dayananda Sagar University (DSU)</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Kumaraswamy Layout, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3398,15 +3683,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2004</span>
           </div>
-          <div class="college-name">Acharya Institute</div>
+          <div class="college-name">East Point College of Nursing</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Avalahalli, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3417,15 +3702,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 1990</span>
           </div>
-          <div class="college-name">Dayananda Sagar</div>
+          <div class="college-name">Kempegowda Institute of Nursing (KIMS campus)</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> VV Puram, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3436,15 +3721,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 1972</span>
           </div>
-          <div class="college-name">MVJ College</div>
+          <div class="college-name">PES University</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Banshankari, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3455,15 +3740,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2004</span>
           </div>
-          <div class="college-name">Hillside College</div>
+          <div class="college-name">RajaRajeswari College of Nursing (RRCN)</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Kambipura, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3475,15 +3760,15 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 1987</span>
           </div>
-          <div class="college-name">Venkateshwara College</div>
+          <div class="college-name">Ramaiah Institute of Nursing Education and Research (RINER)</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> MSR Nagara, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
@@ -3494,39 +3779,213 @@
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2015</span>
           </div>
-          <div class="college-name">Krupanidhi College</div>
+          <div class="college-name">Sapthagiri School and College of Nursing</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Chikkabanavara, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
 
       <!-- 10 -->
       <div class="college-card">
-        <div class="college-logo"><img src="College-logo/The Oxford College of Nursing.webp"></div>
+        <div class="college-logo"><img src="College-logo/SJB College of Nursing (SJBCON).webp"></div>
         <div class="college-content">
           <div class="college-meta">
             <span class="college-type private">Private</span>
-            <span class="college-year">Est. 2005</span>
+            <span class="college-year">Est. 2003</span>
           </div>
-          <div class="college-name">Oxford College</div>
+          <div class="college-name">SJB College of Nursing (SJBCON)</div>
           <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
               viewBox="0 0 16 16">
               <path
                 d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
               <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-            </svg> Bangalore</div>
+            </svg> Kengeri, Bangalore</div>
         </div>
         <a class="college-btn" href="#lead-form">Apply →</a>
       </div>
 
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/MVJ College of Nursing.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 1993</span>
+          </div>
+          <div class="college-name">MVJ College of Nursing</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Hoskote, Bangalore</div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img
+            src="College-logo/Vydehi Institute of Nursing Sciences and Research Center (VINS).webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2003</span>
+          </div>
+          <div class="college-name">Vydehi Institute of Nursing Sciences and Research Center (VINS)</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Whitefield, Bangalore</div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img
+            src="College-logo/Sri Siddhartha Institute of Nursing Sciences & Research Centre (SSIMS&RC) Nelamangala.webp">
+        </div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2019</span>
+          </div>
+          <div class="college-name">Sri Siddhartha Institute of Nursing Sciences & Research Centre (SSIMS&RC)
+            Nelamangala</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Nelamangala, Bangalore</div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/The Oxford College of Nursing.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 1992</span>
+          </div>
+          <div class="college-name">The Oxford College of Nursing</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Hongasandra, Bangalore</div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/T.John College of Nursing.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2003</span>
+          </div>
+          <div class="college-name">T.John College of Nursing</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Gottgere, Bangalore</div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <!-- 4 more -->
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/Yenepoya.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2008</span>
+          </div>
+          <div class="college-name">Yenepoya (Deemed to be) University</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Mangalore
+          </div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/Srinivas.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2003</span>
+          </div>
+          <div class="college-name">Srinivas Institute of Nursing Sciences</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Mangalore
+          </div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/Sri Devaraj.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 1998</span>
+          </div>
+          <div class="college-name">Sri Devaraj Urs College of Nursing</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Kolar
+          </div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
+
+      <div class="college-card">
+        <div class="college-logo"><img src="College-logo/BGS.webp"></div>
+        <div class="college-content">
+          <div class="college-meta">
+            <span class="college-type private">Private</span>
+            <span class="college-year">Est. 2003</span>
+          </div>
+          <div class="college-name">BGS & SJB College of Nursing</div>
+          <div class="college-loc"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#16a34a"
+              viewBox="0 0 16 16">
+              <path
+                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg> Bangalore
+          </div>
+        </div>
+        <a class="college-btn" href="#lead-form">Apply →</a>
+      </div>
     </div>
+
+
+
+
 
   </section>
 
@@ -3536,10 +3995,12 @@
   <section class="why" id="why-us">
     <div class="why-layout">
       <div class="why-sticky">
-        <div class="sec-label r">Why Choose Us</div>
-        <h2 class="sec-title r r1">Why <em>BangaloreStudy?</em></h2>
-        <p class="sec-desc r r2" style="margin-bottom:32px">We operate around the clock to ensure every student
-          experiences a result-oriented, stress-free journey through nursing admissions.</p>
+        <div class="sec-label r">POTENTIAL AVENUES</div>
+        <h2 class="sec-title r r1"><em>Scope </em><br> of Nursing</h2>
+        <p class="sec-desc r r2" style="margin-bottom:32px">The scope of nursing is immense with a plethora of academic
+          and career opportunities to tap into especially for a nursing graduate. Take a look down below at some of
+          these potential avenues that a student can make use of depending on their preference.
+        </p>
         <a href="tel:018001208696" class="btn-primary r r3">
           <svg class="arrow-svg" viewBox="0 0 24 24" style="width:15px;height:15px">
             <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
@@ -3551,39 +4012,56 @@
         <div class="why-grid">
           <div class="why-card r r1">
             <div class="why-num">01</div>
-            <div class="why-ct">End-to-End Guidance</div>
-            <p class="why-cd">From application to enrolment, our team walks beside you through every step of the nursing
-              admission journey.</p>
+            <div class="why-ct">Diverse Career Opportunities</div>
+            <p class="why-cd">Explore rewarding career paths across hospitals, clinics, community healthcare centres,
+              educational institutions and research organizations.
+            </p>
           </div>
           <div class="why-card r r2">
             <div class="why-num">02</div>
-            <div class="why-ct">15+ Partner Colleges</div>
-            <p class="why-cd">Direct partnerships with top nursing institutions in Bangalore ensure you access the best
-              available seats.</p>
+            <div class="why-ct">Global Employment Prospects
+            </div>
+            <p class="why-cd">Benefit from growing demand for qualified nursing professionals in India and across
+              international healthcare systems.
+            </p>
           </div>
           <div class="why-card r r1">
             <div class="why-num">03</div>
-            <div class="why-ct">24/7 Expert Support</div>
-            <p class="why-cd">Our counsellors are available around the clock to answer queries and provide timely,
-              accurate information.</p>
+            <div class="why-ct">Advanced Education Pathways
+
+            </div>
+            <p class="why-cd">Pursue higher studies through Post Basic B.Sc Nursing, M.Sc Nursing and specialized
+              nursing certifications to enhance expertise.
+            </p>
           </div>
           <div class="why-card r r2">
             <div class="why-num">04</div>
-            <div class="why-ct">Simplified Documentation</div>
-            <p class="why-cd">We help you compile and verify all documents, eliminating errors and delays during the
-              admission process.</p>
+            <div class="why-ct">Specialization Opportunities
+            </div>
+            <p class="why-cd">Build expertise in areas such as Medical-Surgical Nursing, Paediatric Nursing, Psychiatric
+              Nursing, Community Health Nursing and Critical Care Nursing.
+
+            </p>
           </div>
           <div class="why-card r r1">
             <div class="why-num">05</div>
-            <div class="why-ct">Proven Track Record</div>
-            <p class="why-cd">Thousands of students have secured seats at premier nursing institutions through our
-              trusted guidance service.</p>
+            <div class="why-ct">Leadership & Academic Roles
+
+            </div>
+            <p class="why-cd">Advance into nursing administration, healthcare management, teaching and academic
+              positions with experience and higher qualifications.
+
+
+            </p>
           </div>
           <div class="why-card r r2">
             <div class="why-num">06</div>
-            <div class="why-ct">NRI &amp; Outstation Support</div>
-            <p class="why-cd">Specialised assistance for students from outside Karnataka and NRI applicants navigating
-              admissions remotely.</p>
+            <div class="why-ct">Contribution to Healthcare & Society
+            </div>
+            <p class="why-cd">Play a vital role in patient care, health promotion, disease prevention and community
+              well-being while making a meaningful impact on society.
+
+            </p>
           </div>
         </div>
         <div class="why-cta-strip r">
@@ -3600,62 +4078,81 @@
   <section class="faq" id="faq">
     <div class="faq-layout">
       <div class="faq-sticky">
-        <div class="intro-label r">Common Questions</div>
+        <div class="intro-label r">COMMON QUESTIONS</div>
         <h2 class="intro-heading r r1">Frequently <em>Asked Questions</em></h2>
         <p class="intro-body r r2" style="margin-top:18px">Everything you need to know about nursing admissions in
           Bangalore.</p>
-        <a href="tel:018001208696" class="btn-primary r r3" style="margin-top:28px">
+        <!-- <a href="tel:018001208696" class="btn-primary r r3" style="margin-top:28px">
           <svg class="arrow-svg" viewBox="0 0 24 24" style="width:15px;height:15px">
             <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
           </svg>
           Call Free
-        </a>
+        </a> -->
       </div>
       <div>
         <div class="faq-list">
           <div class="faq-item r"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
-                course durations for B.Sc Nursing and GNM?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+                different nursing courses available after Class 12?
+              </span><span class="faq-icon"><svg viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                 </svg></span></button>
             <div class="faq-body">
-              <div class="faq-body-inner">The B.Sc Nursing programme runs for 4 years, while GNM is a 3-year programme.
-                Both include extensive clinical training throughout their duration.</div>
+              <div class="faq-body-inner">Students can pursue various nursing programmes based on their educational
+                qualifications and career goals, including GNM (General Nursing and Midwifery), B.Sc Nursing, Post Basic
+                B.Sc Nursing, and M.Sc Nursing. Each programme is designed to equip students with the knowledge and
+                practical skills required for a career in healthcare.
+              </div>
             </div>
           </div>
-          <div class="faq-item r r1"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
-                eligibility criteria for B.Sc Nursing?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+          <div class="faq-item r r1"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What is the
+                eligibility criteria for nursing admissions?
+              </span><span class="faq-icon"><svg viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                 </svg></span></button>
             <div class="faq-body">
-              <div class="faq-body-inner">Students must clear KCET and have completed 12th with minimum 45–50% in
-                Physics, Chemistry, Biology, and English.</div>
+              <div class="faq-body-inner">The eligibility requirements vary by course. For B.Sc Nursing and GNM,
+                candidates are generally required to have completed Class 12 from a recognized board. Post Basic B.Sc
+                Nursing is intended for registered nursing professionals while M.Sc Nursing requires a bachelor's degree
+                in nursing from a recognised institution.
+              </div>
             </div>
           </div>
-          <div class="faq-item r r2"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What is the
-                fee structure for nursing courses in Bangalore?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+          <div class="faq-item r r2"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Is an
+                entrance exam required for nursing admissions?
+              </span><span class="faq-icon"><svg viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                 </svg></span></button>
             <div class="faq-body">
-              <div class="faq-body-inner">Fees vary based on seat type (Merit / Management / NRI) and institution type.
-                Our counsellors provide detailed, institution-specific fee breakdowns during consultation.</div>
+              <div class="faq-body-inner">The admission process differs depending on the course and institution. While
+                some nursing programmes offer merit-based admissions, others require candidates to qualify in
+                state-level, university-level or institution-specific entrance examinations.
+              </div>
             </div>
           </div>
-          <div class="faq-item r r3"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Does B.Sc
-                Nursing require NEET?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+          <div class="faq-item r r3"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What career
+                opportunities are available after completing a nursing course?
+              </span><span class="faq-icon"><svg viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                 </svg></span></button>
             <div class="faq-body">
-              <div class="faq-body-inner">NEET is generally not required for nursing colleges in Bangalore. However,
-                students aspiring to join the Military Nursing Service (MNS) must clear NEET.</div>
+              <div class="faq-body-inner">Nursing graduates can pursue careers in hospitals, clinics, community
+                healthcare centres, educational institutions, research organisations, and public health departments.
+                They can also specialise in areas such as critical care, paediatric nursing, psychiatric nursing,
+                community health nursing, and medical-surgical nursing.
+              </div>
             </div>
           </div>
-          <div class="faq-item r r4"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What are the
-                requirements for M.Sc Nursing in Bangalore?</span><span class="faq-icon"><svg viewBox="0 0 24 24">
+          <div class="faq-item r r4"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Can nursing
+                graduates pursue higher studies and specializations?</span><span class="faq-icon"><svg
+                  viewBox="0 0 24 24">
                   <path stroke-linecap="round" d="M12 5v14M5 12h14" />
                 </svg></span></button>
             <div class="faq-body">
-              <div class="faq-body-inner">A B.Sc or P.B.B.Sc Nursing degree with minimum 45–55% aggregate, plus one year
-                of clinical experience. Some colleges require university-specific entrance exams.</div>
+              <div class="faq-body-inner">Yes, nursing professionals can advance their careers through higher education
+                programmes such as Post Basic B.Sc Nursing, M.Sc Nursing, and various specialized certification courses.
+                These qualifications can lead to opportunities in clinical practice, research, education,
+                administration, and healthcare leadership.
+              </div>
             </div>
           </div>
         </div>
@@ -3665,22 +4162,22 @@
 
   <!-- FINAL CTA -->
   <section class="final">
-    <div class="final-kicker">Shape your future · 2025–26 Admissions Open</div>
-    <h2 class="final-title r"><span style="display:block">The Best</span><em>Nursing Colleges</em><span
-        style="display:block">Await You.</span></h2>
-    <p class="final-sub r r1">Don't miss your chance to secure a seat at Bangalore's top nursing institutions. Expert
-      guidance, from eligibility to enrolment.</p>
+    <div class="final-kicker">Shape Your Future . 2026-27 Admissions Open</div>
+    <h2 class="final-title r"><span style="display:block">The Top </span><em>Nursing Colleges</em> <br> Await You!</h2>
+    <p class="final-sub r r1">Don't miss your chance to secure a seat at Bangalore's top nursing institutions with our
+      expert guidance, from eligibility to enrolment.
+    </p>
     <div class="final-actions r r2">
-      <a href="#lead-form" class="btn-primary" style="margin-top:0">Secure Your Seat <svg class="arrow-svg"
+      <a href="#lead-form" class="btn-primary" style="margin-top:0">Secure Your Seat<svg class="arrow-svg"
           viewBox="0 0 24 24">
           <path stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6" />
         </svg></a>
-      <a href="tel:018001208696" class="btn-hero-ghost-cta">
+      <!-- <a href="tel:018001208696" class="btn-hero-ghost-cta">
         <svg class="arrow-svg" viewBox="0 0 24 24" style="width:13px;height:13px">
           <path stroke-linecap="round" d="M3 5h2l2 5-2 3c2 3 4 5 7 7l3-2 5 2v2a18 18 0 01-17-17z" />
         </svg>
         Call Free — 1800 120 8696
-      </a>
+      </a> -->
     </div>
     <div class="final-divider"></div>
   </section>
@@ -3689,11 +4186,35 @@
   <footer>
     <div class="footer-top">
       <div>
-        <a href="#" class="nav-brand">
-          <img src="Media/BangaloreStudy_WLogo.svg" alt="">
+        <a href="#" class="logo-wrap">
+          <img src="Media/BangaloreStudy_WLogo.svg" alt="Bangalore Study">
         </a>
-        <p class="footer-tagline">Your trusted partner for nursing college admissions in Bangalore. Expert guidance, top
-          colleges, seamless process.</p>
+        <style>
+          .logo-wrap {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+          }
+
+          .logo-wrap img {
+            display: block;
+            height: 96px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+          }
+
+          @media (max-width: 768px) {
+            .logo-wrap img {
+              height: 42px;
+            }
+          }
+        </style>
+        <p class="footer-tagline">Your trusted partner for Nursing college admissions in Bangalore. With our expert
+          guidance, we aim to provide you with a seamless experience in getting admission into the top colleges in the
+          city.
+        </p>
       </div>
       <div>
         <div class="footer-col-title">Contact</div>
@@ -3724,10 +4245,6 @@
             </svg></a>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2025 Bangalorestudy.com. All Rights Reserved.</span>
-      <span class="footer-copy">Nursing Admissions in Bangalore 2025–26</span>
     </div>
   </footer>
 
