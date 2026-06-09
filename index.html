@@ -1546,7 +1546,7 @@
       gap: 40px;
       max-width: 1220px;
       margin: 0 auto;
-      padding-bottom: 44px;
+      padding-bottom: 5px;
       border-bottom: 1px solid rgba(140, 199, 196, 0.07);
       margin-bottom: 32px
     }
@@ -1622,42 +1622,6 @@
 
     .nav-brand.footer-brand-logo img {
       height: 48px;
-    }
-
-    .socials {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px
-    }
-
-    .social-link {
-      width: 32px;
-      height: 32px;
-      border: 1px solid rgba(140, 199, 196, 0.713);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all .25s;
-      border-radius: 4px
-    }
-
-    .social-link svg {
-      width: 13px;
-      height: 13px;
-      fill: none;
-      stroke: rgba(255, 255, 255, 0.852);
-      stroke-width: 1.8;
-      transition: stroke .25s
-    }
-
-    .social-link:hover {
-      border-color: var(--red);
-      background: rgba(219, 26, 26, 0.12)
-    }
-
-    .social-link:hover svg {
-      stroke: var(--red)
     }
 
     /* REVEAL */
@@ -2026,11 +1990,11 @@
         <img src="Media/BangaloreStudy_WLogo.svg" alt="BangaloreStudy">
       </a>
       <ul class="nav-links">
-        <li><a href="#courses">Why Us?</a></li>
+        <li><a href="#subjects">Why Us?</a></li>
+          <li><a href="#courses">Admissions</a></li>
         <li><a href="#admissions">Courses</a></li>
-        <li><a href="#courses">Admissions</a></li>
-        <li><a href="#admissions">Top Colleges</a></li>
-        <li><a href="#colleges">FAQs</a></li>
+        <li><a href="#collegee">Top Colleges</a></li>
+        <li><a href="#faq">FAQs</a></li>
       </ul>
       <a href="#lead-form" class="nav-apply">Contact Us &nbsp;→</a>
       <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menu">
@@ -2218,33 +2182,8 @@
               </div>
             </div>
             <div class="f-group">
-
-              <div class="f-select-wrap">
-                <select class="f-input" required>
-                  <option value="" disabled selected>Specializations</option>
-                  <option>GNM</option>
-                  <option>B.Sc Nursing</option>
-                  <option>P.B.B.Sc Nursing</option>
-                  <option>M.Sc Nursing</option>
-                  <option>Medical-Surgical Nursing</option>
-                  <option>Obstetrics &amp; Gynaecological Nursing</option>
-                  <option>Paediatric Nursing</option>
-                  <option>Mental Health Nursing</option>
-                  <option>Community Health Nursing</option>
-                  <option>Critical Care Nursing</option>
-                  <option>Oncology Nursing</option>
-                  <option>Cardiothoracic Nursing</option>
-                  <option>Neuroscience Nursing</option>
-                  <option>Operation Theatre Nursing</option>
-                  <option>Orthopaedic &amp; Rehabilitation Nursing</option>
-                  <option>Emergency &amp; Disaster Nursing</option>
-                  <option>Nephro Nursing</option>
-                  <option>Forensic Nursing</option>
-                  <option>Geriatric Nursing</option>
-                </select>
-              </div>
+              <textarea class="f-input" placeholder="Message (Optional) :" rows="2" required></textarea>
             </div>
-
             <button type="submit" class="f-submit" id="formBtn">
               Submit &nbsp;→
             </button>
@@ -2327,7 +2266,7 @@
   <section class="intro" id="subjects">
     <div class="intro-grid-layout">
       <div>
-        <div class="intro-label r">ABOUT US</div>
+        <div class="intro-label r">WHY BANGALORESTUDY</div>
         <h2 class="intro-heading r r1">Why <span>Us?</span> </h2>
         <p class="intro-body r r2">BangaloreStudy is committed to guiding students through a seamless and result-driven
           nursing admission journey in Bangalore.
@@ -2340,7 +2279,8 @@
         <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-person-check"></i></span>
           <div class="intro-cell-name">Expert Academic Counselling</div>
           <div class="intro-cell-meta">Get personalized guidance from experienced admission experts especially for the
-            Nursing course.</div>
+            Nursing course.
+          </div>
         </div>
         <div class="intro-cell"><span class="intro-cell-icon"><i class="bi bi-building-add"></i></span>
           <div class="intro-cell-name">Tailored Admission Assistance</div>
@@ -2447,7 +2387,7 @@
     .sec-sub {
       font-size: .93rem;
       font-weight: 300;
-      color: rgba(232, 240, 242, .65);
+      color: rgba(232, 240, 242, 0.932);
       line-height: 1.75;
       max-width: 1460px;
     }
@@ -2590,6 +2530,159 @@
       border-radius: 11px;
     }
 
+    .program-card {
+      background: var(--white);
+      border: 1px solid rgba(44, 104, 123, .15);
+      border-radius: 18px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all .35s ease;
+      box-shadow: 0 4px 24px rgba(14, 40, 48, .12);
+    }
+
+    .program-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(140, 199, 196, .4);
+      box-shadow: 0 20px 50px rgba(14, 40, 48, .18);
+    }
+
+    .program-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: .4s;
+    }
+
+    .program-card:hover .program-accent {
+      transform: scaleX(1);
+    }
+
+    .program-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    .program-logo {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: var(--mist);
+      border: 1px solid rgba(44, 104, 123, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: .35s;
+    }
+
+    .program-card:hover .program-logo {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(140, 199, 196, .25);
+    }
+
+    .program-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .program-content {
+      flex: 1;
+    }
+
+    .program-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 12px;
+      border-radius: 100px;
+      background: #d1fffd;
+      border: 1px solid rgba(140, 199, 196, .25);
+      color: var(--deep-3);
+      text-transform: uppercase;
+      font-size: .7rem;
+      letter-spacing: 0.96px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .program-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .program-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--deep-3);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .program-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--deep);
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .program-duration svg {
+      width: 16px;
+      height: 16px;
+      color: var(--teal);
+    }
+
+    .program-text {
+      color: var(--body);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .program-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--white);
+      background: var(--deep);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .program-btn:hover {
+      background: var(--deep-2);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(44, 104, 123, .38);
+      gap: 13px;
+      color: var(--white);
+    }
+
+    .program-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
     /* duration */
     .c-dur {
       display: inline-flex;
@@ -2616,8 +2709,8 @@
       color: var(--deep-3);
       margin-bottom: 14px;
     }
-    
-   /* body text */
+
+    /* body text */
     .c-body {
       font-size: .9rem;
       font-weight: 400;
@@ -3089,19 +3182,19 @@
       <!-- ── Header ── -->
       <div class="row justify-content-between align-items-end mb-2 reveal">
         <div class="col-lg-12">
-          <span class="sec-eyebrow">Nursing Programmes</span>
-          <h2 class="sec-title">Chart Your Path in <span>Modern Healthcare</span></h2>
+          <span class="sec-eyebrow">NURSING PROGRAMMES</span>
+          <h2 class="sec-title">Nursing <span>Courses</span> in Bangalore</h2>
           <p class="sec-sub">The pivotal role of nurses in the healthcare system has consistently driven the need for
             high-quality nursing education. This growing demand for academic excellence and professionally trained
             healthcare practitioners has led to the development of a wide range of nursing courses in Bangalore. These
             programmes are offered across diploma, undergraduate, and postgraduate levels to cater to students at
             different stages of their academic journey.
-            <br>
+            <br>  <br>
             Each of these nursing courses is carefully structured to strengthen students’ theoretical understanding,
             clinical knowledge, and practical competencies. With a strong emphasis on skill development and professional
             training, these programmes equip aspiring nurses with the expertise required to excel in the evolving field
             of healthcare.
-            <br>
+            <br>  <br>
             Let us explore the various nursing courses offered by some of the top nursing colleges in Bangalore, along
             with their eligibility criteria and course duration, to help you choose the programme that best aligns with
             your career aspirations.
@@ -3113,11 +3206,60 @@
       </div>
 
       <!-- ════════════ UNDERGRADUATE ════════════ -->
-      <div class="tier-div reveal"><span>Undergraduate</span></div>
+      <div class="tier-div reveal"><span>Diploma</span></div>
 
       <div class="row g-4">
+        <div class="col-md-12 reveal rd3">
+          <div class="program-card">
+            <div class="program-accent"></div>
+
+            <div class="program-layout">
+
+              <div class="program-logo">
+                <img src="pg-course-icons/General Nursing and Midwifery (GNM).svg" alt="GNM">
+              </div>
+              <div class="program-content">
+
+                <span class="program-badge">
+                  <span class="dot"></span>
+                  Diploma</span>
+                <h3 class="program-title">
+                  General Nursing and Midwifery (GNM)
+                </h3>
+                <div class="program-duration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  3 Years Duration
+                </div>
+                <p class="program-text">
+                  <strong>Eligibility:</strong> Candidates must have completed 10+2 or equivalent with a minimum
+                  aggregate of 40%–50% from a recognised board.
+
+                </p>
+                <p class="program-text">
+                  The GNM nursing course is a diploma-level nursing programme designed to prepare students for a
+                  rewarding career in patient care and healthcare services. The course focuses on building a strong
+                  foundation in nursing principles, clinical practices, and midwifery care, enabling students to deliver
+                  quality healthcare across diverse medical settings.
+
+                </p>
+                <a href="#" class="program-btn">
+                  Apply Now
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <!-- Card 1 -->
-        <div class="col-md-4 reveal rd3">
+        <!-- <div class="col-md-4 reveal rd3">
           <div class="course-card">
             <div class="c-accent"></div>
             <div class="c-logo">
@@ -3150,10 +3292,10 @@
               </svg>
             </a>
           </div>
-        </div>
-
+        </div> -->
+        <div class="tier-div reveal"><span>Undergraduate</span></div>
         <!-- Card 2 -->
-        <div class="col-md-4 reveal rd3">
+        <div class="col-md-6 reveal rd3">
           <div class="course-card">
             <div class="c-accent"></div>
             <div class="c-logo">
@@ -3191,11 +3333,11 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="col-md-4 reveal rd3">
+        <div class="col-md-6 reveal rd3">
           <div class="course-card">
             <div class="c-accent"></div>
             <div class="c-logo">
-              <img src="pg-course-icons/Oncology Nursing.svg" alt="GNM"
+              <img src="pg-course-icons/Post Basic B.Sc Nursing (P.B.B.Sc Nursing).svg" alt="GNM"
                 onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#8CC7C4\' stroke-width=\'1.6\' stroke-linecap=\'round\' stroke-linejoin=\'round\' width=\'28\' height=\'28\'><path d=\'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z\'/><path d=\'M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z\'/></svg>'">
             </div>
             <span class="lv-badge lv-ug"><span class="dot"></span>Undergraduate</span>
@@ -3308,8 +3450,9 @@
                 </div>
                 <div class="spec-name">Medical-Surgical Nursing</div>
               </div>
-              <div class="spec-tag">Focuses on the care of adult patients with acute and chronic medical conditions. Nurses develop expertise in managing complex diseases, surgical recovery, and specialized treatment plans across various healthcare settings.
-</div>
+              <div class="spec-tag">Focuses on the care of adult patients with acute and chronic medical conditions.
+                Nurses develop expertise in managing complex diseases, surgical recovery, and specialised treatment
+                plans across various healthcare settings.</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3330,8 +3473,8 @@
                 </div>
                 <div class="spec-name">Obstetrics & Gynaecological Nursing</div>
               </div>
-              <div class="spec-tag">Specializes in women's reproductive health, pregnancy, childbirth, and postnatal care. Nurses support mothers and newborns while assisting in gynaecological treatments and procedures.
-
+              <div class="spec-tag">Specialises in women's reproductive health, pregnancy, childbirth, and postnatal
+                care. Nurses support mothers and newborns while assisting in gynaecological treatments and procedures.
               </div>
               <a href="#" class="btn-spec">
                 Apply Now
@@ -3400,8 +3543,9 @@
                 </div>
                 <div class="spec-name">Community Health Nursing</div>
               </div>
-              <div class="spec-tag">Emphasizes public health promotion, disease prevention, and healthcare delivery at the community level. Nurses work in schools, rural health centres, NGOs, and government healthcare programmes.
-
+              <div class="spec-tag">Emphasizes public health promotion, disease prevention, and healthcare delivery at
+                the community level. Nurses work in schools, rural health centres, NGOs, and government healthcare
+                programmes.
               </div>
               <a href="#" class="btn-spec">
                 Apply Now
@@ -3423,8 +3567,8 @@
                 </div>
                 <div class="spec-name">Critical Care Nursing</div>
               </div>
-              <div class="spec-tag">Specializes in caring for critically ill patients in intensive care units (ICUs). Nurses monitor life-support systems and manage patients requiring advanced medical intervention.
-
+              <div class="spec-tag">Specializes in caring for critically ill patients in intensive care units (ICUs).
+                Nurses monitor life-support systems and manage patients requiring advanced medical intervention.
               </div>
               <a href="#" class="btn-spec">
                 Apply Now
@@ -3446,8 +3590,7 @@
                 </div>
                 <div class="spec-name">Oncology Nursing</div>
               </div>
-              <div class="spec-tag">Focuses on the care of patients diagnosed with cancer. Nurses assist in chemotherapy, radiation therapy, symptom management, and emotional support throughout treatment.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3468,8 +3611,7 @@
                 </div>
                 <div class="spec-name">Cardiothoracic Nursing</div>
               </div>
-              <div class="spec-tag">Deals with patients undergoing cardiac and thoracic procedures. Nurses provide specialized care before, during, and after heart and chest-related surgeries.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3490,8 +3632,7 @@
                 </div>
                 <div class="spec-name">Neuroscience Nursing</div>
               </div>
-              <div class="spec-tag">Specializes in the care of patients with neurological disorders such as stroke, epilepsy, brain injuries, and spinal conditions. Nurses support diagnosis, treatment, and rehabilitation.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3512,8 +3653,7 @@
                 </div>
                 <div class="spec-name">Operation Theatre Nursing</div>
               </div>
-              <div class="spec-tag">Trains nurses to assist surgeons and anaesthetists during surgical procedures. Responsibilities include maintaining sterile environments, preparing equipment, and ensuring patient safety.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3534,8 +3674,7 @@
                 </div>
                 <div class="spec-name">Orthopaedic & Rehabilitation Nursing</div>
               </div>
-              <div class="spec-tag">Focuses on caring for patients with musculoskeletal injuries, fractures, joint disorders, and physical disabilities. Nurses play a key role in recovery and rehabilitation programmes.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3556,8 +3695,7 @@
                 </div>
                 <div class="spec-name">Emergency & Disaster Nursing</div>
               </div>
-              <div class="spec-tag">Prepares nurses to provide immediate care during emergencies, accidents, trauma cases, and disaster situations. The specialization emphasizes rapid assessment and critical decision-making.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3578,8 +3716,7 @@
                 </div>
                 <div class="spec-name">Nephro Nursing</div>
               </div>
-              <div class="spec-tag">Dedicated to the care of patients with kidney-related disorders. Nurses assist in dialysis procedures, renal treatments, patient education, and long-term kidney care management.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3600,8 +3737,7 @@
                 </div>
                 <div class="spec-name">Forensic Nursing</div>
               </div>
-              <div class="spec-tag">Combines nursing practice with legal and investigative healthcare services. Nurses assist victims of violence, collect medical evidence, and support legal proceedings when required.
-</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3622,7 +3758,7 @@
                 </div>
                 <div class="spec-name">Geriatric Nursing</div>
               </div>
-              <div class="spec-tag">Focuses on the healthcare needs of older adults. Nurses manage age-related conditions, promote healthy ageing, and provide long-term care to improve quality of life.</div>
+              <div class="spec-tag">Acute &amp; perioperative care</div>
               <a href="#" class="btn-spec">
                 Apply Now
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
@@ -3633,8 +3769,10 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </section>
 
@@ -3674,7 +3812,7 @@
     <div class="adm-top">
       <div>
         <div class="intro-label r in">Admission Process</div>
-        <h2 class="intro-heading r r1 ">Nursing Admissions<br><span>in Bangalore</span></h2>
+        <h2 class="intro-heading r r1 ">Nursing Admissions in<span> Karnataka</span></h2>
       </div>
       <p class="r r2" style="color:rgba(0, 0, 0, 0.815);font-size:1rem;font-weight:400;line-height:1.8">Admissions
         to
@@ -3858,20 +3996,16 @@
         align-items: center;
         justify-content: center;
         gap: 6px;
-
         background: var(--maroon-2);
         color: #fff;
-
         padding: 10px 16px;
         border-radius: 4px;
-
         text-decoration: none;
-
         font-family: var(--cond);
-        font-size: .68rem;
+        font-size: .75rem;
+        font-weight: 700;
         letter-spacing: .14em;
         text-transform: uppercase;
-
         transition: .3s ease;
         flex-shrink: 0;
       }
@@ -3906,10 +4040,10 @@
     </style>
 
     <!-- HEADER -->
-    <div class="colleges-head">
+    <div class="colleges-head" id="collegee">
       <div>
         <div class="intro-label r in">RENOWNED INSTITUTIONS</div>
-        <h2 class="intro-heading r r1 in">Top Nursing Colleges in <span>Bangalore</span></h2>
+        <h2 class="intro-heading r r1 in">Top Nursing Colleges in <span>Karnataka</span></h2>
       </div>
       <p style="color:var(--deep-3); line-height:1.8;">
         Nursing colleges in Bangalore have played a crucial role in fostering academic excellence among nursing
@@ -4300,7 +4434,7 @@
   <section class="why" id="why-us">
     <div class="why-layout">
       <div class="why-sticky">
-        <div class="sec-label r">POTENTIAL AVENUES</div>
+        <div class="sec-eyebrow r">POTENTIAL AVENUES</div>
         <h2 class="sec-title r r1"><span>Scope </span> of Nursing</h2>
         <p class="sec-desc text-white r r2" style="margin-bottom:22px">The scope of nursing is immense with a plethora
           of academic
@@ -4513,25 +4647,6 @@
           <li><a href="tel:08022454991"><i class="bi bi-dot"></i> 080-22454991</a></li>
           <li><a href="tel:09715024365"><i class="bi bi-dot"></i> +971 502436552 (Dubai)</a></li>
         </ul>
-        <div class="socials">
-          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-            </svg></a>
-          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg></a>
-          <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24">
-              <path
-                d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
-              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
-            </svg></a>
-          <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-              <circle cx="4" cy="4" r="2" />
-            </svg></a>
-        </div>
       </div>
     </div>
   </footer>
