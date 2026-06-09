@@ -1256,7 +1256,7 @@
     /* WHY */
     .why {
       background: var(--deep-2);
-      padding: 100px 20px;
+      padding: 50px 20px;
       position: relative;
       overflow: hidden
     }
@@ -1991,7 +1991,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#subjects">Why Us?</a></li>
-          <li><a href="#courses">Admissions</a></li>
+        <li><a href="#courses">Admissions</a></li>
         <li><a href="#admissions">Courses</a></li>
         <li><a href="#collegee">Top Colleges</a></li>
         <li><a href="#faq">FAQs</a></li>
@@ -2001,6 +2001,7 @@
         <span></span><span></span><span></span>
       </button>
     </div>
+    <!-- added -->
   </div>
 
   <!-- ══ HERO ══ -->
@@ -2251,14 +2252,16 @@
   <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track">
-      <span>GNM Nursing <em>—</em></span><span>B.Sc Nursing <em>—</em></span>
-      <span>P.B.B.Sc Nursing <em>—</em></span><span>M.Sc Nursing <em>—</em></span>
-      <span>Top Colleges in Bangalore <em>—</em></span><span>Expert Admission Guidance <em>—</em></span>
-      <span>Admissions Open 2025–26 <em>—</em></span>
-      <span>GNM Nursing <em>—</em></span><span>B.Sc Nursing <em>—</em></span>
-      <span>P.B.B.Sc Nursing <em>—</em></span><span>M.Sc Nursing <em>—</em></span>
-      <span>Top Colleges in Bangalore <em>—</em></span><span>Expert Admission Guidance <em>—</em></span>
-      <span>Admissions Open 2025–26 <em>—</em></span>
+       <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
+       <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
+       <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
+       <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
+      <span>Admissions Open 2026-27 <em>—</em></span>
     </div>
   </div>
 
@@ -2321,7 +2324,7 @@
 
     /* ── Section ── */
     #courses {
-      padding: 100px 0 120px;
+      padding: 20px 0 120px;
       position: relative;
       overflow: hidden;
       background: linear-gradient(160deg, #0e2830 0%, var(--deep-3) 40%, #0c1f28 100%);
@@ -3189,12 +3192,12 @@
             healthcare practitioners has led to the development of a wide range of nursing courses in Bangalore. These
             programmes are offered across diploma, undergraduate, and postgraduate levels to cater to students at
             different stages of their academic journey.
-            <br>  <br>
+            <br> <br>
             Each of these nursing courses is carefully structured to strengthen students’ theoretical understanding,
             clinical knowledge, and practical competencies. With a strong emphasis on skill development and professional
             training, these programmes equip aspiring nurses with the expertise required to excel in the evolving field
             of healthcare.
-            <br>  <br>
+            <br> <br>
             Let us explore the various nursing courses offered by some of the top nursing colleges in Bangalore, along
             with their eligibility criteria and course duration, to help you choose the programme that best aligns with
             your career aspirations.
@@ -3298,6 +3301,103 @@
         <div class="col-md-6 reveal rd3">
           <div class="course-card">
             <div class="c-accent"></div>
+            <span class="kcet-badge">
+              KCET Mandatory
+            </span>
+
+            <style>
+              .course-card {
+                position: relative;
+              }
+.kcet-badge {
+  overflow: hidden;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.kcet-badge::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 50px;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.5),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: kcetShine 3s linear infinite;
+}
+
+@keyframes kcetShine {
+  to {
+    left: 220%;
+  }
+}
+              .kcet-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #DB1A1A, #f03333);
+  color: #fff;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  box-shadow: 0 8px 20px rgba(219, 26, 26, 0.25);
+
+  animation: kcetPulse 2.5s ease-in-out infinite;
+}
+
+.kcet-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  margin-right: 6px;
+
+  animation: kcetDot 1.5s ease-in-out infinite;
+}
+
+@keyframes kcetPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(219, 26, 26, 0.25);
+  }
+
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(219, 26, 26, 0.4);
+  }
+}
+
+@keyframes kcetDot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .6;
+    transform: scale(1.4);
+  }
+}
+            </style>
             <div class="c-logo">
               <img src="pg-course-icons/Bachelor of Science (B.Sc) in Nursing.svg" alt="GNM"
                 onerror="this.style.display='none';this.parentElement.innerHTML='<svg viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#8CC7C4\' stroke-width=\'1.6\' stroke-linecap=\'round\' stroke-linejoin=\'round\' width=\'28\' height=\'28\'><path d=\'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z\'/><path d=\'M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z\'/></svg>'">
@@ -3396,7 +3496,7 @@
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
                   </svg>
-                  15 Specialisations
+                  15 Specializations
                 </span>
               </div>
               <h2 class="pg-title">Master of Science (M.Sc) in Nursing</em></h2>
@@ -3438,7 +3538,7 @@
 
       <!-- Spec Bridge -->
       <div class="spec-bridge reveal">
-        <p class="spec-bridge-hd">15 M.Sc Nursing Specialisations</p>
+        <p class="spec-bridge-hd">15 M.Sc Nursing Specializations</p>
         <div class="row g-3">
 
           <!-- 1 -->
